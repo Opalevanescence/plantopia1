@@ -18,17 +18,15 @@
 }
 
 .card-plant-info {
-  display: flex;
+  display: block;
   padding: 20px;
-  align-items: center;
+}
+
+.card-plant-info-details {
+  display: flex;
   justify-content: space-between;
 }
 
-.card-plant-info-details h1, .card-plant-info-details p {
-  margin: 0;
-}
-
-.card-plant-info-price {
-  // margin: 15px 10px 0 0;
-  align-self: flex-start;
+.card-plant-info p {
+  text-align: justify;
 }
