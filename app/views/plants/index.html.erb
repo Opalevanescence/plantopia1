@@ -1,28 +1,58 @@
-<h1>Trees</h1>
-<ul>
-  <%= @trees.each do |tree| %>
-  <li><%= tree %></li>
-  <% end %>
-</ul>
-<br>
-<h1>Flowers</h1>
-<ul>
-  <%= @flowers.each do |flower| %>
-  <li><%= flower %></li>
-  <% end %>
-</ul>
-<br>
-<h1>Bushes</h1>
-<ul>
-  <%= @bushes.each do |bush| %>
-  <li><%= bush %></li>
-  <% end %>
-</ul>
-<br>
-<h1>Cacti</h1>
-<ul>
-  <%= @Cacti.each do |cactus| %>
-  <li><%= cactus %></li>
-  <% end %>
-</ul>
-<br>
+<div class="container">
+
+  <h1>Trees</h1>
+
+  <div class="cards">
+    <% @trees.each do |tree| %>
+    <img src="https://source.unsplash.com/random" alt="">
+    <p class="card"><%= tree.name %></p>
+    <% end %>
+  </div>
+
+  <br>
+
+  <h1>Flowers</h1>
+
+  <div class="cards">
+    <% @flowers.each do |flower| %>
+    <img src="https://source.unsplash.com/random" alt="">
+    <p class="card"><%= flower.name %></p>
+    <% end %>
+  </div>
+
+  <br>
+
+  <h1>Bushes</h1>
+
+  <div class="cards">
+    <% @bushes.each do |bush| %>
+    <img src="https://source.unsplash.com/random" alt="">
+    <p class="card"><%= bush.name %></p>
+    <% end %>
+  </div>
+
+  <br>
+
+  <h1>Cacti</h1>
+
+  <div class="cards">
+    <% @cacti.each do |cactus| %>
+    <img src="https://source.unsplash.com/random" alt="">
+    <p class="card"><%= cactus.name %></p>
+    <% end %>
+  </div>
+
+  <!-- <div class="card-trip">
+    <img src="css/images/brunch.jpg" alt="pancakes" class="card-trip-image">
+    <div class="card-trip-info">
+      <div class="card-trip-info-description">
+        <h1>Title here</h1>
+        <p>Short description here!</p>
+      </div>
+      <h1 class="card-trip-info-price">£19.99</h1>
+      <img src="css/images/idriselba.jpeg" class="card-trip-avatar">
+    </div>
+  </div> -->
+
+  <br>
+</div>
