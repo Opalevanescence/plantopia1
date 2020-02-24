@@ -10,7 +10,7 @@
               <h3><%= tree.name %></h3>
               <h3>£<%= tree.price %></h3>
             </div>
-            <p><%= tree.description %></p>
+            <p><%= truncate(tree.description, length: 200) %> <%= link_to(" ...Read More", plant_path(tree)) %></p>
           </div>
         </div>
       <% end %>
@@ -26,7 +26,7 @@
               <h3><%= flower.name %></h3>
               <h3>£<%= flower.price %></h3>
             </div>
-            <p><%= flower.description %></p>
+            <p><%= truncate(flower.description, length: 200) %> <%= link_to(" ...Read More", plant_path(flower)) %></p>
           </div>
         </div>
       <% end %>
@@ -42,7 +42,7 @@
               <h3><%= bush.name %></h3>
               <h3>£<%= bush.price %></h3>
             </div>
-            <p><%= bush.description %></p>
+            <p><%= truncate(bush.description, length: 200) %> <%= link_to(" ...Read More", plant_path(bush)) %></p>
           </div>
         </div>
       <% end %>
@@ -58,7 +58,7 @@
               <h3><%= cactus.name %></h3>
               <h3>£<%= cactus.price %></h3>
             </div>
-            <p><%= cactus.description %></p>
+            <p><%= truncate(cactus.description, length: 200) %> <%= link_to(" ...Read More", plant_path(cactus)) %></p>
           </div>
         </div>
       <% end %>
