@@ -1,48 +1,68 @@
 <div class="container">
 
   <h1>Trees</h1>
-
   <div class="cards">
     <% @trees.each do |tree| %>
-    <img src="https://source.unsplash.com/random" alt="">
-    <p class="card"><%= tree.name %></p>
+    <img class="card-plant-image" src="https://source.unsplash.com/random" alt="">
+    <div class="card-plant-info">
+      <div class="card-plant-info-details">
+        <h3><%= tree.name %></h3>
+        <p><%= tree.description %></p>
+      </div>
+      <h2 class="card-plant-info-price">£<%= tree.price %></h2>
+    </div>
     <% end %>
   </div>
 
   <br>
 
   <h1>Flowers</h1>
-
   <div class="cards">
     <% @flowers.each do |flower| %>
-    <img src="https://source.unsplash.com/random" alt="">
-    <p class="card"><%= flower.name %></p>
+    <img class="card-plant-image" src="https://source.unsplash.com/random" alt="">
+    <div class="card-plant-info">
+      <div class="card-plant-info-details">
+        <h3><%= flower.name %></h3>
+        <p><%= flower.description %></p>
+      </div>
+      <h2 class="card-plant-info-price">£<%= flower.price %></h2>
+    </div>
     <% end %>
   </div>
 
   <br>
 
   <h1>Bushes</h1>
-
   <div class="cards">
     <% @bushes.each do |bush| %>
-    <img src="https://source.unsplash.com/random" alt="">
-    <p class="card"><%= bush.name %></p>
+    <img class="card-plant-image" src="https://source.unsplash.com/random" alt="">
+    <div class="card-plant-info">
+      <div class="card-plant-info-details">
+        <h3><%= bush.name %></h3>
+        <p><%= bush.description %></p>
+      </div>
+      <h2 class="card-plant-info-price">£<%= bush.price %></h2>
+    </div>
     <% end %>
   </div>
 
   <br>
 
   <h1>Cacti</h1>
-
   <div class="cards">
     <% @cacti.each do |cactus| %>
-    <img src="https://source.unsplash.com/random" alt="">
-    <p class="card"><%= cactus.name %></p>
+    <img class="card-plant-image" src="https://source.unsplash.com/random" alt="">
+    <div class="card-plant-info">
+      <div class="card-plant-info-details">
+        <h3><%= cactus.name %></h3>
+        <p><%= cactus.description %></p>
+      </div>
+      <h2 class="card-plant-info-price">£<%= cactus.price %></h2>
+    </div>
     <% end %>
   </div>
 
-  <!-- <div class="card-trip">
+  <div class="card-trip">
     <img src="css/images/brunch.jpg" alt="pancakes" class="card-trip-image">
     <div class="card-trip-info">
       <div class="card-trip-info-description">
@@ -52,7 +72,7 @@
       <h1 class="card-trip-info-price">£19.99</h1>
       <img src="css/images/idriselba.jpeg" class="card-trip-avatar">
     </div>
-  </div> -->
+  </div>
 
   <br>
 </div>
