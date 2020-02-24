@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :transactions
-  has_many :plants
+  has_many :plants, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true, length: { in: 5..30 }
   # Eventually, username should validate that it's an email address
