@@ -1,84 +1,86 @@
-<div class="d-flex justify-content-between">
-  <!-- Change image to be different for each person -->
-  <div class="d-flex">
-    <img class="avatar-large" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="person's profile">
-    <!-- Change to return just what comes before the email's @ -->
-    <h1>  <%= @user.username %> </h1>
-  </div>
-  <%= link_to 'Add New', new_plant_path %>
-</div>
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-my-plants-tab" data-toggle="tab" href="#nav-my-plants" role="tab" aria-controls="nav-my-plants" aria-selected="true">My Plants</a>
-    <a class="nav-item nav-link" id="nav-my-purchases-tab" data-toggle="tab" href="#nav-my-purchases" role="tab" aria-controls="nav-my-purchases" aria-selected="false">My Purchases</a>
-    <a class="nav-item nav-link" id="nav-plants-sold-tab" data-toggle="tab" href="#nav-plants-sold" role="tab" aria-controls="nav-plants-sold" aria-selected="false">Plants Sold</a>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-my-plants" role="tabpanel" aria-labelledby="nav-my-plants-tab">
-    <% if  @my_plants.first == nil %>
-      <p>No plants for sale right now. Add a new plant to get started!</p>
-    <% else %>
-    <div class="cards">
-      <% @my_plants.each do |plant| %>
-        <div class="card-plant">
-          <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
-          <div class="card-plant-info">
-            <div class="card-plant-info-details">
-              <h3><%= plant.name %></h3>
-              <h3>£<%= plant.price %></h3>
-            </div>
-            <span class="card-plant-show-link">
-              <%= link_to 'Edit', '#'  %>
-              <%= link_to 'Delete', '#' %>
-            </span>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <!-- Change image to be different for each person -->
+    <div class="d-flex m-4">
+      <img class="avatar-large" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="person's profile">
+      <!-- Change to return just what comes before the email's @ -->
+      <h1 class="p-4 align-middle">  <%= @user.username %> </h1>
     </div>
+    <a href="plants/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add New</a>
   </div>
-
-  <div class="tab-pane fade" id="nav-my-purchases" role="tabpanel" aria-labelledby="nav-my-purchases-tab">
-    <div class="tab-pane fade show active" id="nav-my-plants" role="tabpanel" aria-labelledby="nav-my-plants-tab">
-    <% if  @my_purchases.first == nil %>
-      <p>Nothing purchased yet. Happy plant finding!</p>
-    <% else %>
-    <div class="cards">
-      <% @my_purchases.each do |purchase| %>
-        <div class="card-plant">
-          <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
-          <div class="card-plant-info">
-            <div class="card-plant-info-details">
-              <h3><%= purchase.plant.name %></h3>
-              <h3>£<%= purchase.plant.price %></h3>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-my-plants-tab" data-toggle="tab" href="#nav-my-plants" role="tab" aria-controls="nav-my-plants" aria-selected="true">My Plants</a>
+      <a class="nav-item nav-link" id="nav-my-purchases-tab" data-toggle="tab" href="#nav-my-purchases" role="tab" aria-controls="nav-my-purchases" aria-selected="false">My Purchases</a>
+      <a class="nav-item nav-link" id="nav-plants-sold-tab" data-toggle="tab" href="#nav-plants-sold" role="tab" aria-controls="nav-plants-sold" aria-selected="false">Plants Sold</a>
     </div>
-  </div>
-
-  <div class="tab-pane fade" id="nav-plants-sold" role="tabpanel" aria-labelledby="nav-plants-sold-tab">
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-my-plants" role="tabpanel" aria-labelledby="nav-my-plants-tab">
-    <% if  @plants_sold.first == nil %>
-      <p>No plants sold yet, come back later.</p>
-    <% else %>
+      <% if  @my_plants.first == nil %>
+        <p>No plants for sale right now. Add a new plant to get started!</p>
+      <% else %>
       <div class="cards">
-        <% @plants_sold.each do |plant_sold| %>
+        <% @my_plants.each do |plant| %>
           <div class="card-plant">
             <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3><%= plant_sold.plant.name %></h3>
-                <h3>£<%= plant_sold.plant.price %></h3>
+                <h3><%= plant.name %></h3>
+                <h3>£<%= plant.price %></h3>
+              </div>
+              <span class="card-plant-show-link">
+                <%= link_to 'Edit', '#'  %>
+                <%= link_to 'Delete', '#' %>
+              </span>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="nav-my-purchases" role="tabpanel" aria-labelledby="nav-my-purchases-tab">
+      <div class="tab-pane fade show active" id="nav-my-plants" role="tabpanel" aria-labelledby="nav-my-plants-tab">
+      <% if  @my_purchases.first == nil %>
+        <p>Nothing purchased yet. Happy plant finding!</p>
+      <% else %>
+      <div class="cards">
+        <% @my_purchases.each do |purchase| %>
+          <div class="card-plant">
+            <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
+            <div class="card-plant-info">
+              <div class="card-plant-info-details">
+                <h3><%= purchase.plant.name %></h3>
+                <h3>£<%= purchase.plant.price %></h3>
               </div>
             </div>
           </div>
         <% end %>
-    <% end %>
+      <% end %>
+      </div>
     </div>
-  </div>
 
+    <div class="tab-pane fade" id="nav-plants-sold" role="tabpanel" aria-labelledby="nav-plants-sold-tab">
+      <div class="tab-pane fade show active" id="nav-my-plants" role="tabpanel" aria-labelledby="nav-my-plants-tab">
+      <% if  @plants_sold.first == nil %>
+        <p>No plants sold yet, come back later.</p>
+      <% else %>
+        <div class="cards">
+          <% @plants_sold.each do |plant_sold| %>
+            <div class="card-plant">
+              <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
+              <div class="card-plant-info">
+                <div class="card-plant-info-details">
+                  <h3><%= plant_sold.plant.name %></h3>
+                  <h3>£<%= plant_sold.plant.price %></h3>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+      </div>
+    </div>
+
+  </div>
 </div>
