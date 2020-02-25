@@ -1,28 +1,87 @@
-<h1>Trees</h1>
-<ul>
-  <%= @trees.each do |tree| %>
-  <li><%= tree %></li>
-  <% end %>
-</ul>
-<br>
-<h1>Flowers</h1>
-<ul>
-  <%= @flowers.each do |flower| %>
-  <li><%= flower %></li>
-  <% end %>
-</ul>
-<br>
-<h1>Bushes</h1>
-<ul>
-  <%= @bushes.each do |bush| %>
-  <li><%= bush %></li>
-  <% end %>
-</ul>
-<br>
-<h1>Cacti</h1>
-<ul>
-  <%= @Cacti.each do |cactus| %>
-  <li><%= cactus %></li>
-  <% end %>
-</ul>
-<br>
+  <div class="container">
+
+    <h1 class="cards-header">Trees</h1>
+    <div class="cards">
+      <% @trees.each do |tree| %>
+        <div class="card-plant">
+          <img class="card-plant-image" src="https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
+          <div class="card-plant-info">
+            <div class="card-plant-info-details">
+              <h3><%= tree.name %></h3>
+              <h3>£<%= tree.price %></h3>
+            </div>
+            <span class="card-plant-show-link">
+              <%= truncate(tree.description, length: 125) %>
+              <%= link_to(plant_path(tree)) do %>
+                ...see more <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <h1 class="cards-header">Flowers</h1>
+    <div class="cards">
+      <% @flowers.each do |flower| %>
+        <div class="card-plant">
+          <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
+          <div class="card-plant-info">
+            <div class="card-plant-info-details">
+              <h3><%= flower.name %></h3>
+              <h3>£<%= flower.price %></h3>
+            </div>
+            <span class="card-plant-show-link">
+              <%= truncate(flower.description, length: 125) %>
+              <%= link_to(plant_path(flower)) do %>
+                ...see more <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <h1 class="cards-header">Bushes</h1>
+    <div class="cards">
+      <% @bushes.each do |bush| %>
+        <div class="card-plant">
+          <img class="card-plant-image" src="https://images.unsplash.com/photo-1547695626-2cb8ea41823d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="">
+          <div class="card-plant-info">
+            <div class="card-plant-info-details">
+              <h3><%= bush.name %></h3>
+              <h3>£<%= bush.price %></h3>
+            </div>
+            <span class="card-plant-show-link">
+              <%= truncate(bush.description, length: 125) %>
+              <%= link_to(plant_path(bush)) do %>
+                ...see more <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <h1 class="cards-header">Cacti</h1>
+    <div class="cards">
+      <% @cacti.each do |cactus| %>
+        <div class="card-plant">
+          <img class="card-plant-image" src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80" alt="">
+          <div class="card-plant-info">
+            <div class="card-plant-info-details">
+              <h3><%= cactus.name %></h3>
+              <h3>£<%= cactus.price %></h3>
+            </div>
+            <span class="card-plant-show-link">
+              <%= truncate(cactus.description, length: 125) %>
+              <%= link_to(plant_path(cactus)) do %>
+                ...see more <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
