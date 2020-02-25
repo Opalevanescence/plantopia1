@@ -11,15 +11,13 @@ class PlantsController < ApplicationController
   def show
     @plant = Plant.find(params[:id])
   end
-  
+
   def update
     respond_to do |format|
       if @plant.update(plant_params)
         format.html { redirect_to @plant, notice: 'Plant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @plant }
       else
         format.html { render :edit }
-        format.json { render json: @plant.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -34,7 +32,6 @@ class PlantsController < ApplicationController
     @plant.destroy
     respond_to do |format|
       format.html { redirect_to plants_url, notice: 'Plant was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
  def new
