@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'user/show'
   # root to: 'pages#home'
 
-  resources :plants, only: [:index, :show, :new, :create]
-  resources :users, only: [:show]
+  resources :users, only: [:new, :show] do
+    resources :plants, only: [:new, :edit, :destroy, :create, :update]
+  end
+  resources :plants , only: [:index, :show]
 end
