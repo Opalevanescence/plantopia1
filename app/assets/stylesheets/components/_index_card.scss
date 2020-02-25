@@ -10,12 +10,13 @@
 }
 
 .card-plant {
-  box-shadow: 2px 2px 5px #30541f;
+  box-shadow: 2px 2px 5px #6b9331;
   background-color: white;
 }
 
 .card-plant-image {
   width: 100%;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -31,4 +32,13 @@
 
 .card-plant-info p {
   text-align: justify;
+}
+
+.card-plant-show-link a {
+  text-decoration: none;
+  color: #6b9331;
+}
+
+.card-plant-show-link a:hover {
+  color: black;
 }
