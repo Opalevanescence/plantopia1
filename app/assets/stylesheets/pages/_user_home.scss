@@ -1,5 +1,10 @@
 .user_home_btn {
+  color: #F7F7F7;
   height: 50px;
+
+  &:hover {
+    color: white;
+  }
 }
 
 .user_home_alert {
