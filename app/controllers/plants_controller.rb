@@ -11,7 +11,7 @@ class PlantsController < ApplicationController
   def show
     @plant = Plant.find(params[:id])
   end
-
+  
   def update
     respond_to do |format|
       if @plant.update(plant_params)
@@ -37,7 +37,11 @@ class PlantsController < ApplicationController
       format.json { head :no_content }
     end
   end
+ def new
+  end
 
+  def create
+  end
 
 
   private
@@ -50,7 +54,5 @@ class PlantsController < ApplicationController
     def plant_params
       params.require(:plant).permit(:name, :price, :description, :price)
     end
-  end
-
-
+end
 
