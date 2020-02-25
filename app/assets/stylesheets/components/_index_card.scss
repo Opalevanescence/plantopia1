@@ -1,11 +1,13 @@
 .cards-header {
-  margin: 20px 0px;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 
@@ -28,6 +30,7 @@
 .card-plant-info-details {
   display: flex;
   justify-content: space-between;
+  color: #6a8d73;
 }
 
 .card-plant-info p {
@@ -36,5 +39,5 @@
 
 .card-plant-show-link a {
   text-decoration: none;
-  color: #6b9331;
+  color: #6a8d73;
 }

@@ -2,7 +2,7 @@
 
   <div class="show-plant">
     <div>
-      <img class="card-plant-image" src="https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
+      <img class="show-plant-image" src="https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
     </div>
     <div class="show-info">
       <div class="show-details">
@@ -16,11 +16,13 @@
           <input id="quantity" type="number" value="1" min="1" increment="1">
         </div>
         <div class="show-input">
-        <label for="total">Total</label>
-        <input id="total" value="£<%= @plant.price %>" disabled>
+          <label for="total">Total</label>
+          <input id="total" value="£<%= @plant.price %>" disabled>
         </div>
         <div class="show-btns">
-          <button class="btn btn-success cancel">Cancel</button>
+          <%= link_to plants_path do %>
+            <button class="btn btn-success cancel">Cancel</button>
+          <% end %>
           <button type="submit" class="btn btn-success">Buy</button>
         </div>
       </form>
