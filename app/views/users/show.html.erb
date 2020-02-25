@@ -6,16 +6,16 @@
       <!-- Change to return just what comes before the email's @ -->
       <h1 class="p-4 align-middle">  <%= @user.username %> </h1>
     </div>
-    <a href="plants/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add New</a>
+    <a href="plants/new" class="btn btn-success btn-lg" role="button" aria-pressed="false">Add New</a>
   </div>
   <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <div class="nav nav-tabs mt-4 mb-4" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active" id="nav-my-plants-tab" data-toggle="tab" href="#nav-my-plants" role="tab" aria-controls="nav-my-plants" aria-selected="true">My Plants</a>
       <a class="nav-item nav-link" id="nav-my-purchases-tab" data-toggle="tab" href="#nav-my-purchases" role="tab" aria-controls="nav-my-purchases" aria-selected="false">My Purchases</a>
       <a class="nav-item nav-link" id="nav-plants-sold-tab" data-toggle="tab" href="#nav-plants-sold" role="tab" aria-controls="nav-plants-sold" aria-selected="false">Plants Sold</a>
     </div>
   </nav>
-  <div class="tab-content" id="nav-tabContent">
+  <div class="tab-content p-3" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-my-plants" role="tabpanel" aria-labelledby="nav-my-plants-tab">
       <% if  @my_plants.first == nil %>
         <p>No plants for sale right now. Add a new plant to get started!</p>
