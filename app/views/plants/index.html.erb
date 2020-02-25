@@ -13,6 +13,7 @@
               </div>
               <span class="card-plant-show-link">
                 <%= truncate(plant.description, length: 125) %>
+
                 <%= link_to(plant_path(plant)) do %>
                   ...see more <%= icon("fas", "seedling") %>
                 <% end %>

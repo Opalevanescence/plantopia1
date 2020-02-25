@@ -6,6 +6,7 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
+    @transaction = Transaction.new
   end
 
   def new
