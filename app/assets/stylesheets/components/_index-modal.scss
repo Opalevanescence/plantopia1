@@ -1,0 +1,23 @@
+.modal-plant {
+  display: flex;
+}
+
+.modal-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.round-bordered {
+  border: 1px solid #5a5a5a;
+  border-radius: 50%;
+  width: 35px;
+  font-size: 18px;
+  color: #848484;
+  height: 35px;
+  padding: 3px
+}
