@@ -20,7 +20,7 @@
   <div class="tab-content p-3" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-my-plants" role="tabpanel" aria-labelledby="nav-my-plants-tab">
       <% if  @my_plants.first == nil %>
-        <p>No plants for sale right now. Add a new plant to get started!</p>
+        <p class="user_home_alert">No plants for sale right now. Add a new plant to get started!</p>
       <% else %>
         <div class="cards">
           <% @my_plants.each do |plant| %>
@@ -48,7 +48,7 @@
 
     <div class="tab-pane fade" id="nav-my-purchases" role="tabpanel" aria-labelledby="nav-my-purchases-tab">
       <% if  @my_purchases.length == 0 %>
-        <p>Nothing purchased yet. Happy plant finding!</p>
+        <p class="user_home_alert">Nothing purchased yet. Happy plant finding!</p>
       <% else %>
         <div class="cards">
           <% @my_purchases.each do |purchase| %>
@@ -68,7 +68,7 @@
 
     <div class="tab-pane fade" id="nav-plants-sold" role="tabpanel" aria-labelledby="nav-plants-sold-tab">
       <% if  @plants_sold.length == 0 %>
-        <p>No plants sold yet, come back later.</p>
+        <p class="user_home_alert">No plants sold yet, come back later.</p>
       <% else %>
         <div class="cards">
           <% @plants_sold.each do |plant_sold| %>
