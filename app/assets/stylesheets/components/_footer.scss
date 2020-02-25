@@ -1,0 +1,39 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+  font-size: 14px;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+  padding: 0px;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+.social_icons {
+
+  font-size: 30px;
+  letter-spacing: 10px;
+  text-align: center;
+}

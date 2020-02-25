@@ -18,57 +18,6 @@
                 <% end %>
               </span>
             </div>
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%= plant.id %> ">
-              Launch demo modal
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal<%= plant.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <!-- <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                  </div> -->
-                  <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    <div class="modal-plant">
-                      <div class="modal-image">
-                        <img class="card-plant-image" src="https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
-                      </div>
-                      <div class="modal-info">
-                        <div class="modal-details">
-                          <div><%= plant.name %></div>
-                          <div>£<%= plant.price %></div>
-                        </div>
-                        <div><%= plant.description %></div>
-                          <form class="modal-cart">
-                            <div>
-                              <a class="btn round-bordered incrementer minus" data-offset="-1">-</a>
-                              <span id="counter" data-count="1">0</span>
-                              <a href="#" class="btn round-bordered incrementer" data-offset="1">+</a>
-                            </div>
-
-                            <div><input id="price-input" class="form-control" type="number" value="0" disabled ></div>
-                            <div><input id="submit" class="btn btn-success" type="submit" value="Buy"></div>
-                          </form>
-                      </div>
-                    </div>
-
-
-                  </div>
-                  <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-
           </div>
         <% end %>
       <% end %>
