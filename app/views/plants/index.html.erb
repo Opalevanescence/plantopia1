@@ -1,6 +1,8 @@
   <div class="container">
 
-    <h1 class="cards-header">Trees</h1>
+    <h1 class="cards-header">
+      <%= link_to "Trees", plants_path %>
+    </h1>
     <div class="cards">
       <% counter = 0 %>
       <% @plants.select do |plant| %>
@@ -29,7 +31,9 @@
       <%= link_to "(show all)", plants_path %>
     </div>
 
-    <h1 class="cards-header">Flowers</h1>
+    <h1 class="cards-header">
+      <%= link_to "Flowers", plants_path %>
+    </h1>
     <div class="cards">
       <% counter = 0 %>
       <% @plants.select do |plant| %>
@@ -57,7 +61,9 @@
       <%= link_to "(show all)", plants_path %>
     </div>
 
-    <h1 class="cards-header">Bushes</h1>
+    <h1 class="cards-header">
+      <%= link_to "Bushes", plants_path %>
+    </h1>
     <div class="cards">
       <% counter = 0 %>
       <% @plants.select do |plant| %>
@@ -85,7 +91,9 @@
       <%= link_to "(show all)", plants_path %>
     </div>
 
-    <h1 class="cards-header">Cacti</h1>
+    <h1 class="cards-header">
+      <%= link_to "Cacti", plants_path %>
+    </h1>
     <div class="cards">
       <% counter = 0 %>
       <% @plants.select do |plant| %>
