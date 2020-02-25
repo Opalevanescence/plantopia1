@@ -2,16 +2,22 @@ class PlantsController < ApplicationController
    before_action :set_plant, only: [:show, :edit, :update, :destroy]
   def index
     @plants = Plant.all
-    @trees = Plant.where(category: 'tree')
-    @flowers = Plant.where(category: 'flower')
-    @bushes = Plant.where(category: 'bush')
-    @cacti = Plant.where(category: 'cactus')
   end
 
   def show
     @plant = Plant.find(params[:id])
+    @transaction = Transaction.new
   end
-  
+
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+  end
+
   def update
     respond_to do |format|
       if @plant.update(plant_params)
@@ -24,12 +30,6 @@ class PlantsController < ApplicationController
     end
   end
 
-
-
-
-  def edit
-  end
-
   def destroy
     @plant.destroy
     respond_to do |format|
@@ -37,12 +37,6 @@ class PlantsController < ApplicationController
       format.json { head :no_content }
     end
   end
- def new
-  end
-
-  def create
-  end
-
 
   private
 
