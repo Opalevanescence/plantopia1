@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  # get 'plants/index'
-  # get 'plants/show'
+  get 'user/show'
   # root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # get 'plants', to: 'plants#index'
-  # get 'plants/:id', to: 'plants#show'
 
-  resources :plants, only: [:index, :show]
+  resources :plants, only: [:index, :show, :new, :create]
+  resources :users, only: [:show]
 end
