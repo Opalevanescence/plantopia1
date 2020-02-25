@@ -8,10 +8,14 @@
       <% @plants.select do |plant| %>
         <% if plant.category == "tree" && counter < 6 %>
           <div class="card-plant">
-            <img class="card-plant-image" src="https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
+            <%= link_to plant_path(plant) do %>
+              <%= image_tag "https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80", alt: "alttext", class: "card-plant-image" %>
+            <% end %>
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3><%= plant.name %></h3>
+                <h3>
+                  <%= link_to plant.name, plant_path(plant) %>
+                </h3>
                 <h3>£<%= plant.price %></h3>
               </div>
               <span class="card-plant-show-link">
@@ -39,10 +43,14 @@
       <% @plants.select do |plant| %>
         <% if plant.category == "flower" && counter < 6 %>
           <div class="card-plant">
-            <img class="card-plant-image" src="https://images.unsplash.com/photo-1476293889456-abfb7492a29f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="">
+            <%= link_to plant_path(plant) do %>
+              <%= image_tag "https://images.unsplash.com/photo-1476293889456-abfb7492a29f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", alt: "alttext", class: "card-plant-image" %>
+            <% end %>
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3><%= plant.name %></h3>
+                <h3>
+                  <%= link_to plant.name, plant_path(plant) %>
+                </h3>
                 <h3>£<%= plant.price %></h3>
               </div>
               <span class="card-plant-show-link">
@@ -69,10 +77,14 @@
       <% @plants.select do |plant| %>
         <% if plant.category == "bush" && counter < 6 %>
           <div class="card-plant">
-            <img class="card-plant-image" src="https://images.unsplash.com/photo-1484015310453-0fbb5cac82e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80" alt="">
+            <%= link_to plant_path(plant) do %>
+              <%= image_tag "https://images.unsplash.com/photo-1484015310453-0fbb5cac82e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80", alt: "alttext", class: "card-plant-image" %>
+            <% end %>
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3><%= plant.name %></h3>
+                <h3>
+                  <%= link_to plant.name, plant_path(plant) %>
+                </h3>
                 <h3>£<%= plant.price %></h3>
               </div>
               <span class="card-plant-show-link">
@@ -99,10 +111,14 @@
       <% @plants.select do |plant| %>
         <% if plant.category == "cactus" && counter < 6 %>
           <div class="card-plant">
-            <img class="card-plant-image" src="https://images.unsplash.com/photo-1519758374387-b9f92969d7ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="">
+            <%= link_to plant_path(plant) do %>
+              <%= image_tag "https://images.unsplash.com/photo-1519758374387-b9f92969d7ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", alt: "alttext", class: "card-plant-image" %>
+            <% end %>
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3><%= plant.name %></h3>
+                <h3>
+                  <%= link_to plant.name, plant_path(plant) %>
+                </h3>
                 <h3>£<%= plant.price %></h3>
               </div>
               <span class="card-plant-show-link">
