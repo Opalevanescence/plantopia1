@@ -1,10 +1,10 @@
   <div class="container">
 
     <h1 class="cards-header">Trees</h1>
-    <%= link_to "(show all)", plants_path%>
     <div class="cards">
+      <% counter = 0 %>
       <% @plants.select do |plant| %>
-        <% if plant.category == "tree" %>
+        <% if plant.category == "tree" && counter < 6 %>
           <div class="card-plant">
             <img class="card-plant-image" src="https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
             <div class="card-plant-info">
@@ -19,17 +19,21 @@
                   ...see more <%= icon("fas", "seedling") %>
                 <% end %>
               </span>
+              <% counter += 1 %>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
+    <div class="show-all-link">
+      <%= link_to "(show all)", plants_path %>
+    </div>
 
     <h1 class="cards-header">Flowers</h1>
-    <%= link_to "(show all)", plants_path%>
     <div class="cards">
+      <% counter = 0 %>
       <% @plants.select do |plant| %>
-        <% if plant.category == "flower" %>
+        <% if plant.category == "flower" && counter < 6 %>
           <div class="card-plant">
             <img class="card-plant-image" src="https://images.unsplash.com/photo-1476293889456-abfb7492a29f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="">
             <div class="card-plant-info">
@@ -43,17 +47,21 @@
                   ...see more <%= icon("fas", "seedling") %>
                 <% end %>
               </span>
+              <% counter += 1 %>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
+    <div class="show-all-link">
+      <%= link_to "(show all)", plants_path %>
+    </div>
 
     <h1 class="cards-header">Bushes</h1>
-    <%= link_to "(show all)", plants_path%>
     <div class="cards">
+      <% counter = 0 %>
       <% @plants.select do |plant| %>
-        <% if plant.category == "bush" %>
+        <% if plant.category == "bush" && counter < 6 %>
           <div class="card-plant">
             <img class="card-plant-image" src="https://images.unsplash.com/photo-1484015310453-0fbb5cac82e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80" alt="">
             <div class="card-plant-info">
@@ -67,17 +75,21 @@
                   ...see more <%= icon("fas", "seedling") %>
                 <% end %>
               </span>
+              <% counter += 1 %>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
+    <div class="show-all-link">
+      <%= link_to "(show all)", plants_path %>
+    </div>
 
     <h1 class="cards-header">Cacti</h1>
-    <%= link_to "(show all)", plants_path%>
     <div class="cards">
+      <% counter = 0 %>
       <% @plants.select do |plant| %>
-        <% if plant.category == "cactus" %>
+        <% if plant.category == "cactus" && counter < 6 %>
           <div class="card-plant">
             <img class="card-plant-image" src="https://images.unsplash.com/photo-1519758374387-b9f92969d7ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="">
             <div class="card-plant-info">
@@ -91,10 +103,14 @@
                   ...see more <%= icon("fas", "seedling") %>
                 <% end %>
               </span>
+              <% counter += 1 %>
             </div>
           </div>
         <% end %>
       <% end %>
+    </div>
+    <div class="show-all-link">
+      <%= link_to "(show all)", plants_path %>
     </div>
 
   </div>
