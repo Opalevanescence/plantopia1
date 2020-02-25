@@ -20,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  color: #6a8d73;
 }
 
 .show-description {
@@ -32,10 +33,23 @@ form {
 }
 
 .show-input label {
-  width: 90px;
+  width: 88px;
 }
 
 .show-input input {
-  width: 50px;
+  width: 52px;
   text-align: center;
+}
+
+.show-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-cancel {
+  width: 80px;
+}
+
+.show-submit {
+  width: 52px;
 }

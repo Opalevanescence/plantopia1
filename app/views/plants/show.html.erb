@@ -19,7 +19,10 @@
         <label for="total">Total</label>
         <input id="total" value="£<%= @plant.price %>" disabled>
         </div>
-        <button type="submit" class="btn btn-success">Buy</button>
+        <div class="show-btns">
+          <button class="btn btn-success cancel">Cancel</button>
+          <button type="submit" class="btn btn-success">Buy</button>
+        </div>
       </form>
     </div>
   </div>
