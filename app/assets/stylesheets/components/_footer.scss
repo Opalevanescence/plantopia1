@@ -1,39 +1,54 @@
 footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
   margin-top: 45px;
-  padding-top: 5px;
+  padding: 10px;
   border-top: 1px solid #eaeaea;
   color: #999;
+  font-size: 14px;
 }
 
 footer a {
-  color: #555;
+  color: #999;
 }
 
 footer a:hover {
-  color: #222;
+  color: #6a8d73;
+  text-decoration: none;
 }
 
-footer small {
+.footer-signature {
   float: left;
   font-size: 14px;
 }
 
-footer ul {
-  float: right;
-  list-style: none;
-  padding: 0px;
+.footer-signature p {
+  margin: 14px 0px;
 }
 
-footer ul li {
-  float: left;
+.footer-social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.footer-social-icons a {
+  padding: 0px 5px;
+}
+
+.footer-links {
+  display: flex;
+  float: right;
+  list-style: none;
+}
+
+.footer-links {
+  margin: 14px 0px;
+}
+
+.footer-links li a {
   margin-left: 10px;
 }
 
-.social_icons {
-
-  font-size: 30px;
-  letter-spacing: 10px;
-  text-align: center;
-}
