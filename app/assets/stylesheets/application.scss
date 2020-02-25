@@ -11,4 +11,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/user_home";
 
+a {
+  color: #6A8D73;
+
+  &:hover {
+    color: #49604f;
+  }
+}
