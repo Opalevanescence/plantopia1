@@ -10,7 +10,13 @@
               <h3><%= tree.name %></h3>
               <h3>£<%= tree.price %></h3>
             </div>
-            <p><%= truncate(tree.description, length: 200) %> <%= link_to(" ...Read More", plant_path(tree)) %></p>
+            <span>
+              <%= truncate(tree.description, length: 200) %>
+              <%= link_to(plant_path(tree)) do %>
+              ...see more
+              <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
           </div>
         </div>
       <% end %>
@@ -26,7 +32,13 @@
               <h3><%= flower.name %></h3>
               <h3>£<%= flower.price %></h3>
             </div>
-            <p><%= truncate(flower.description, length: 200) %> <%= link_to(" ...Read More", plant_path(flower)) %></p>
+            <span>
+              <%= truncate(flower.description, length: 200) %>
+              <%= link_to(plant_path(flower)) do %>
+              ...see more
+              <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
           </div>
         </div>
       <% end %>
@@ -42,7 +54,13 @@
               <h3><%= bush.name %></h3>
               <h3>£<%= bush.price %></h3>
             </div>
-            <p><%= truncate(bush.description, length: 200) %> <%= link_to(" ...Read More", plant_path(bush)) %></p>
+            <span>
+              <%= truncate(bush.description, length: 200) %>
+              <%= link_to(plant_path(bush)) do %>
+              ...see more
+              <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
           </div>
         </div>
       <% end %>
@@ -58,7 +76,13 @@
               <h3><%= cactus.name %></h3>
               <h3>£<%= cactus.price %></h3>
             </div>
-            <p><%= truncate(cactus.description, length: 200) %> <%= link_to(" ...Read More", plant_path(cactus)) %></p>
+            <span>
+              <%= truncate(cactus.description, length: 200) %>
+              <%= link_to(plant_path(cactus  )) do %>
+              ...see more
+              <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
           </div>
         </div>
       <% end %>
