@@ -13,10 +13,8 @@
             <% end %>
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3>
-                  <%= link_to plant.name, plant_path(plant) %>
-                </h3>
-                <h3>£<%= plant.price %></h3>
+                <h3><%= link_to plant.name, plant_path(plant) %></h3>
+                <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
               </div>
               <span class="card-plant-show-link">
                 <%= truncate(plant.description, length: 125) %>
@@ -48,10 +46,8 @@
             <% end %>
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3>
-                  <%= link_to plant.name, plant_path(plant) %>
-                </h3>
-                <h3>£<%= plant.price %></h3>
+                <h3><%= link_to plant.name, plant_path(plant) %></h3>
+                <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
               </div>
               <span class="card-plant-show-link">
                 <%= truncate(plant.description, length: 125) %>
@@ -82,10 +78,8 @@
             <% end %>
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3>
-                  <%= link_to plant.name, plant_path(plant) %>
-                </h3>
-                <h3>£<%= plant.price %></h3>
+                <h3><%= link_to plant.name, plant_path(plant) %></h3>
+                <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
               </div>
               <span class="card-plant-show-link">
                 <%= truncate(plant.description, length: 125) %>
@@ -116,10 +110,8 @@
             <% end %>
             <div class="card-plant-info">
               <div class="card-plant-info-details">
-                <h3>
-                  <%= link_to plant.name, plant_path(plant) %>
-                </h3>
-                <h3>£<%= plant.price %></h3>
+                <h3><%= link_to plant.name, plant_path(plant) %></h3>
+                <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
               </div>
               <span class="card-plant-show-link">
                 <%= truncate(plant.description, length: 125) %>
