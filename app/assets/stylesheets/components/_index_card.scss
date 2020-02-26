@@ -1,16 +1,17 @@
 .cards-header {
-  margin: 20px 0px;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
-  margin-bottom: 50px;
+  margin-top: 20px;
 }
 
 .card-plant {
-  box-shadow: 2px 2px 5px #6b9331;
+  box-shadow: 3px 3px 10px #6a8d73;
   background-color: white;
 }
 
@@ -28,6 +29,7 @@
 .card-plant-info-details {
   display: flex;
   justify-content: space-between;
+  color: #6a8d73;
 }
 
 .card-plant-info p {
@@ -36,5 +38,14 @@
 
 .card-plant-show-link a {
   text-decoration: none;
-  color: #6b9331;
+  color: #6a8d73;
+}
+
+.show-all-link a {
+  float: right;
+}
+
+.show-all-link {
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
