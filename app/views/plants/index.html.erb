@@ -1,4 +1,40 @@
+
   <div class="container">
+    <%= form_tag plants_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a plant"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <% if @plants %>
+
+     <h1 class="cards-header">Plants</h1>
+    <div class="cards">
+      <% @plants.each do |plant| %>
+        <div class="card-plant">
+          <img class="card-plant-image" src="https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
+          <div class="card-plant-info">
+            <div class="card-plant-info-details">
+              <h3><%= plant.name %></h3>
+              <h3>£<%= plant.price %></h3>
+            </div>
+            <span class="card-plant-show-link">
+              <%= truncate(plant.description, length: 125) %>
+              <%= link_to(plant_path(plant)) do %>
+                ...see more <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <% else %>
 
     <h1 class="cards-header">Trees</h1>
     <div class="cards">
@@ -84,4 +120,5 @@
       <% end %>
     </div>
 
+    <% end %>
   </div>

@@ -1,17 +1,22 @@
 class PlantsController < ApplicationController
    before_action :set_plant, only: [:show, :edit, :update, :destroy]
   def index
-    @plants = Plant.all
-    @trees = Plant.where(category: 'tree')
-    @flowers = Plant.where(category: 'flower')
-    @bushes = Plant.where(category: 'bush')
-    @cacti = Plant.where(category: 'cactus')
+    if params[:query].present?
+      @plants = Plant.where("name like ?", "%#{params[:query]}%")
+    else
+      @trees = Plant.where(category: 'tree')
+      @flowers = Plant.where(category: 'flower')
+      @bushes = Plant.where(category: 'bush')
+      @cacti = Plant.where(category: 'cactus')
+    end
+
+
   end
 
   def show
     @plant = Plant.find(params[:id])
   end
-  
+
   def update
     respond_to do |format|
       if @plant.update(plant_params)
