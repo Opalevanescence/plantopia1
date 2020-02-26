@@ -27,20 +27,16 @@ class PlantsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @plant.update(plant_params)
-        redirect_to @plant
-      else
-        render :edit
-      end
+    if @plant.update(plant_params)
+      redirect_to @plant
+    else
+      render :edit
     end
   end
 
   def destroy
     @plant.destroy
-    respond_to do |format|
-      redirect_to user_path(current_user)
-    end
+    redirect_to user_path(current_user)
   end
 
   private
@@ -51,7 +47,7 @@ class PlantsController < ApplicationController
 
 
     def plant_params
-      params.require(:plant).permit(:name, :price, :description, :price, :category )
+      params.require(:plant).permit(:name, :price, :description, :category, :user_id )
     end
 end
 
