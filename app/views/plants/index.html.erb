@@ -1,5 +1,43 @@
-  <div class="container">
+<div class=“container”>
+  <%= form_tag plants_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: 'form-control',
+      placeholder: 'Find a plant'
+      %>
+    <%= submit_tag 'Search', class: 'btn btn-primary' %>
+  <% end %>
+</div>
 
+<% if  @plants_from_search %>
+  <div class="container">
+    <h1 class="cards-header">
+      <%= link_to @search_term, plants_path %>
+    </h1>
+    <div class="cards">
+      <% @plants_from_search.select do |plant| %>
+        <div class="card-plant">
+          <%= link_to plant_path(plant) do %>
+            <%= image_tag "https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80", alt: "alttext", class: "card-plant-image" %>
+          <% end %>
+          <div class="card-plant-info">
+            <div class="card-plant-info-details">
+              <h3><%= link_to plant.name, plant_path(plant) %></h3>
+              <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
+            </div>
+            <span class="card-plant-show-link">
+              <%= truncate(plant.description, length: 120) %>
+              <%= link_to(plant_path(plant)) do %>
+                ...see more <%= icon("fas", "seedling") %>
+              <% end %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="container">
     <h1 class="cards-header">
       <%= link_to "Trees", plants_path %>
     </h1>
@@ -18,7 +56,6 @@
               </div>
               <span class="card-plant-show-link">
                 <%= truncate(plant.description, length: 120) %>
-
                 <%= link_to(plant_path(plant)) do %>
                   ...see more <%= icon("fas", "seedling") %>
                 <% end %>
@@ -130,3 +167,4 @@
     </div>
 
   </div>
+<% end %>

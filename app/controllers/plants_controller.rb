@@ -3,6 +3,10 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
+    if params[:query].present?
+      @search_term = params[:query]
+      @plants_from_search = Plant.where("name like ?", "%#{@search_term}%")
+    end
   end
 
   def show
