@@ -5,7 +5,6 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @plant = Plant.find(params[:id])
     @transaction = Transaction.new
   end
 
@@ -43,7 +42,7 @@ class PlantsController < ApplicationController
 
 
     def plant_params
-      params.require(:plant).permit(:name, :price, :description, :price)
+      params.require(:plant).permit(:name, :price, :description)
     end
 end
 

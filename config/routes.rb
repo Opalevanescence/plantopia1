@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   resources :plants do
-    resources :transactions, only: :create
+    resources :transactions, only: [:new, :create]
   end
 
   resources :users, only: :show

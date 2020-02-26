@@ -1,4 +1,9 @@
 class TransactionsController < ApplicationController
+
+  def new
+    @transaction = Transaction.new
+  end
+
   def create
     @transaction = Transaction.new
     @transaction.plant_id = Plant.find(params[:id])
@@ -6,7 +11,7 @@ class TransactionsController < ApplicationController
 
     @plant = Plant.find(params[:id])
     @transaction.plant = @plant
-    # @transaction.user_id = @plant.user
+    @transaction.user_id = @plant.user
     if @transaction.save
       # NEED TO SEND TO USER HOMEPAGE
       redirect_to @root_path
