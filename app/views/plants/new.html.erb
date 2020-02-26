@@ -1,8 +1,10 @@
- <h1>Make new plant page</h1>
- <%= simple_form_for(@plant) do |f| %>
-  <%= f.input_field :name %>
-  <%= f.input_field :category%>
-  <%= f.input_field :price %>
-  <%= f.input_field :description %>
-  <%= f.submit 'Save' %>
-<% end %>
+<div class="container">
+  <h1>Add plant</h1>
+   <%= simple_form_for(@plant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category, collection: ['Tree', 'Flower', 'Bush', 'Cactus'] %>
+    <%= f.input :price, input_html: { min: 1 } %>
+    <%= f.input :description %>
+    <%= f.submit 'Save', class: 'btn btn-success' %>
+  <% end %>
+</div>
