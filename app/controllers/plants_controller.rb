@@ -29,7 +29,7 @@ class PlantsController < ApplicationController
   def update
     respond_to do |format|
       if @plant.update(plant_params)
-        format.html { redirect_to @plant, notice: 'Plant was successfully updated.' }
+        redirect_to @plant
       else
         render :edit
       end
