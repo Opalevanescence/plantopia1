@@ -13,7 +13,7 @@
       <form action="" method="">
         <div class="show-input">
           <label for="quantity">Quantity</label>
-          <input id="quantity" type="number" value="1" min="1" increment="1">
+          <input id="quantity" name="quantity" type="number" value="1" min="1" increment="1">
         </div>
         <div class="show-input">
           <label for="total">Total</label>
@@ -23,7 +23,7 @@
           <%= link_to plants_path do %>
             <button class="btn btn-success cancel">Cancel</button>
           <% end %>
-          <%= link_to new_plant_transaction_path %>
+          <%= link_to new_plant_transaction_path(@plant) do %>
             <button type="submit" class="btn btn-success">Buy</button>
           <% end %>
         </div>
