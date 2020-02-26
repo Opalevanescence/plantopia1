@@ -12,7 +12,7 @@ require 'faker'
 puts '-------Creating Users-------'
 puts '------Creating Plants-------'
 5.times do
-  user = User.create!(username: Faker::Internet.email, password: 'secret')
+  user = User.create!(username: Faker::Name.name_with_middle, email: Faker::Internet.email, password: 'secret')
   5.times do
     Plant.create!(name: Faker::Food.ingredient,
                   # picture: 'https://source.unsplash.com/random',
