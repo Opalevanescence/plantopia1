@@ -1,13 +1,8 @@
  <h1>Make new plant page</h1>
- <%= simple_form_for @plant do |f| %>
-  <%= f.label :name %>
+ <%= simple_form_for(@plant) do |f| %>
   <%= f.input_field :name %>
-  <%= f.label :category %>
   <%= f.input_field :category%>
-  <%= f.label :price %>
   <%= f.input_field :price %>
-  <%= f.label :description %>
   <%= f.input_field :description %>
-  <!-- You also need to get the user_id -->
   <%= f.submit 'Save' %>
 <% end %>
