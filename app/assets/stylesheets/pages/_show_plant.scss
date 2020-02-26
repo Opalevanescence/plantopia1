@@ -1,0 +1,55 @@
+.show-plant {
+  display: flex;
+  margin: 88px 0px;
+  background-color: white;
+  box-shadow: 3px 3px 10px #6a8d73;
+}
+
+.show-plant-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.show-info {
+  position: relative;
+  padding: 20px;
+}
+
+.show-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #6a8d73;
+}
+
+.show-description {
+  margin-bottom: 10px;
+}
+
+form {
+  position: absolute;
+  bottom: 20px;
+}
+
+.show-input label {
+  width: 88px;
+}
+
+.show-input input {
+  width: 52px;
+  text-align: center;
+}
+
+.show-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-cancel {
+  width: 80px;
+}
+
+.show-submit {
+  width: 52px;
+}
