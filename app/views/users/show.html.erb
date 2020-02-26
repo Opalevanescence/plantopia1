@@ -33,12 +33,12 @@
                   <h3>£<%= plant.price %></h3>
                 </div>
                 <span class="card-plant-show-link user_home_btns">
-                  <a href="#">
+                  <%= link_to edit_plant_path(plant) do%>
                     <i class="far fa-edit"></i>
-                  </a>
-                  <a href="#">
+                  <% end %>
+                  <%= link_to plant_path(plant), method: :delete do%>
                     <i class="far fa-trash-alt"></i>
-                  </a>
+                  <% end %>
                 </span>
               </div>
             </div>

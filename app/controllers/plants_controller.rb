@@ -39,7 +39,7 @@ class PlantsController < ApplicationController
   def destroy
     @plant.destroy
     respond_to do |format|
-      format.html { redirect_to plants_url, notice: 'Plant was successfully destroyed.' }
+      redirect_to user_path(current_user)
     end
   end
 
