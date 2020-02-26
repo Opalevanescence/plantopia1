@@ -1,18 +1,26 @@
 class PlantsController < ApplicationController
-   before_action :set_plant, only: [:show, :edit, :update, :destroy]
+  before_action :set_plant, only: [:show, :edit, :update, :destroy]
+
   def index
     @plants = Plant.all
   end
 
   def show
-    @plant = Plant.find(params[:id])
     @transaction = Transaction.new
   end
 
   def new
+    @plant = Plant.new
   end
 
   def create
+    @plant = Plant.new(plant_params)
+    @plant.user = current_user
+    if @plant.save
+      redirect_to user_path(current_user)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,7 +31,7 @@ class PlantsController < ApplicationController
       if @plant.update(plant_params)
         format.html { redirect_to @plant, notice: 'Plant was successfully updated.' }
       else
-        format.html { render :edit }
+        render :edit
       end
     end
   end
@@ -31,7 +39,7 @@ class PlantsController < ApplicationController
   def destroy
     @plant.destroy
     respond_to do |format|
-      format.html { redirect_to plants_url, notice: 'Plant was successfully destroyed.' }
+      redirect_to user_path(current_user)
     end
   end
 
@@ -43,7 +51,7 @@ class PlantsController < ApplicationController
 
 
     def plant_params
-      params.require(:plant).permit(:name, :price, :description, :price)
+      params.require(:plant).permit(:name, :price, :description, :price, :category )
     end
 end
 
