@@ -4,7 +4,7 @@
   <div>
      <%= simple_form_for(@plant) do |f| %>
       <%= f.input :name %>
-      <%= f.input :category, collection: ['Tree', 'Flower', 'Bush', 'Cactus'] %>
+      <%= f.input :category, collection: ['tree', 'flower', 'bush', 'cactus'] %>
       <%= f.input :price, input_html: { min: 1 } %>
       <%= f.input :description %>
       <%= f.submit 'Save', class: "btn btn-success" %>
