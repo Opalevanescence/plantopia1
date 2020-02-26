@@ -6,7 +6,8 @@
       <!-- Change to return just what comes before the email's @ -->
       <h1 class="p-4 align-middle">  <%= @user.username %> </h1>
     </div>
-    <a href="plants/new" class="btn btn-success btn-lg user_home_btn m-5" role="button" aria-pressed="false">Add New</a>
+    <%= link_to 'Add New', new_plant_path  %>
+    <!-- <a class="btn btn-success btn-lg user_home_btn m-5" role="button" aria-pressed="false"></a> -->
   </div>
 
   <nav>

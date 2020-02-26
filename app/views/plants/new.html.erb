@@ -1,5 +1,5 @@
  <h1>Make new plant page</h1>
- <%= simple_form_for [@user, @plant] do |f| %>
+ <%= simple_form_for @plant do |f| %>
   <%= f.label :name %>
   <%= f.input_field :name %>
   <%= f.label :category %>
