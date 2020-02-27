@@ -19,10 +19,11 @@
       </div>
       <div class="show-description"><%= @plant.description %></div>
 
+      <p class="confirmation-message">Click "Buy" to confirm..."</p>
       <form class="show-form">
         <div class="show-input">
           <label for="quantity">Quantity</label>
-          <input id="quantity" type="number" value="<%= params[:quantity] %>" min="1" increment="1">
+          <input id="quantity" type="number" value="<%= params[:quantity] %>" disabled>
         </div>
         <div class="show-input">
           <label for="total">Total</label>
@@ -33,7 +34,7 @@
             <button class="btn btn-success cancel">Cancel</button>
           <% end %>
           <%= link_to plant_transactions_path(@plant), method: :post do %>
-            <button type="submit" class="btn btn-success">Buy</button>
+            <button type="submit" class="btn btn-success"><strong>Buy</strong></button>
           <% end %>
         </div>
       </form>
