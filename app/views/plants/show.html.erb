@@ -41,9 +41,8 @@
             <%= link_to plants_path do %>
               <button class="btn btn-success cancel">Back</button>
             <% end %>
-            <% if current_user == @plant.user %>
-                <button class="btn show-btn-color">Next</button>
-            <% else %>
+            <% if current_user != @plant.user %>
+
                 <button id="buy-btn" class="btn btn-success" type="submit">Next</button>
             <% end %>
           </div>
