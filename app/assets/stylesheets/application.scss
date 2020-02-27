@@ -13,6 +13,10 @@
 @import "pages/index";
 @import "pages/user_home";
 
+body {
+  padding-top: 86px;
+}
+
 a {
   color: #6A8D73;
   text-decoration: none;

@@ -1,16 +1,13 @@
-<div class=“container”>
-  <%= form_tag plants_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: 'form-control',
-      placeholder: 'Find a plant'
-      %>
-    <%= submit_tag 'Search', class: 'btn btn-primary' %>
-  <% end %>
-</div>
-
 
 <div class="container">
+    <%= form_tag plants_path, method: :get, class: "form-inline" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: 'form-control',
+        placeholder: 'Find a plant'
+        %>
+      <%= submit_tag 'Search', class: 'btn btn-success ml-2'%>
+    <% end %>
   <h1 class="cards-header">
     <%= link_to "Plants", plants_path %>
   </h1>
@@ -31,7 +28,6 @@
               ...see more <%= icon("fas", "seedling") %>
             <% end %>
           </span>
-
         </div>
       </div>
     <% end %>
