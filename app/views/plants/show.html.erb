@@ -31,12 +31,12 @@
               <button class="btn btn-success cancel">Cancel</button>
             <% end %>
             <% if current_user == @plant.user %>
-              <%= link_to new_plant_transaction_path(@plant) do %>
-                <button type="submit" class="btn btn-success">Buy</button>
+              <%= link_to '#' do %>
+                <button class="btn show-btn-color">Buy</button>
               <% end %>
             <% else %>
-              <%= link_to '#' do %>
-                <button type="submit" class="btn show-btn-color">Buy</button>
+              <%= link_to new_plant_transaction_path(@plant) do %>
+                <button type="submit" class="btn btn-success">Buy</button>
               <% end %>
             <% end %>
           </div>
