@@ -7,7 +7,7 @@
     </div>
   <% end %>
 
-  <div class="show-plant">
+  <div id="plant-id" class="show-plant" data-id= <%= @plant.id %>>
     <div>
       <% if @plant.photo.attached? %>
         <%= cl_image_tag @plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
@@ -30,10 +30,15 @@
         <div><h3>£<%= @plant.price %></h3></div>
       </div>
       <div class="show-description"><%= @plant.description %></div>
-        <form class="show-form">
+        <p class="confirmation-message">How many would you like to buy?"</p>
+        <form class="show-form" id="show-form">
           <div class="show-input">
             <label for="quantity">Quantity</label>
-            <input id="quantity" name="quantity" type="number" value="1" min="1" increment="1">
+            <% if current_user != @plant.user %>
+              <input id="quantity" name="quantity" type="number" value="1" min="1" increment="1">
+            <% else %>
+              <input id="quantity" name="quantity" type="number" value="1" disabled>
+            <% end %>
           </div>
           <div class="show-input">
             <label for="total">Total</label>
@@ -41,16 +46,10 @@
           </div>
           <div class="show-btns">
             <%= link_to plants_path do %>
-              <button class="btn btn-success cancel">Cancel</button>
+              <button class="btn btn-success cancel">Home</button>
             <% end %>
-            <% if current_user == @plant.user %>
-              <%= link_to '#' do %>
-                <button class="btn show-btn-color">Buy</button>
-              <% end %>
-            <% else %>
-              <%= link_to new_plant_transaction_path(@plant) do %>
-                <button type="submit" class="btn btn-success">Buy</button>
-              <% end %>
+            <% if current_user != @plant.user %>
+                <button id="buy-btn" class="btn btn-success" type="submit">Next</button>
             <% end %>
           </div>
         </form>
@@ -64,4 +63,12 @@
   quantity.addEventListener("click", (e) => {
     total.value = `£${ quantity.value * <%= @plant.price %> }`
   })
+
+  const buy = document.getElementById("show-form");
+
+  buy.addEventListener("submit", (e) => {
+    e.preventDefault();
+    window.location.href = window.location.href + `/transactions/new?quantity=` + quantity.value;
+  })
+
 </script>

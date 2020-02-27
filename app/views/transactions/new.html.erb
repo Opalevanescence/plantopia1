@@ -6,26 +6,35 @@
     </div>
     <div class="show-info">
       <div class="show-details">
-        <div><h3><%= @plant.name %></h3></div>
+        <% if @plant.category == "tree" %>
+            <h3><i class="fas fa-tree"></i> <%= @plant.name %></h3>
+          <% elsif @plant.category == "flower" %>
+            <h3><i class="fas fa-fan"> </i> <%= @plant.name %></h3>
+          <% elsif @plant.category == "bush" %>
+            <h3><i class="fab fa-pagelines"></i> <%= @plant.name %></h3>
+          <% else %>
+            <h3><i class="fas fa-cannabis"></i> <%= @plant.name %></h3>
+          <% end %>
         <div><h3>£<%= @plant.price %></h3></div>
       </div>
       <div class="show-description"><%= @plant.description %></div>
 
+      <p class="confirmation-message">Click "Buy" to confirm..."</p>
       <form class="show-form">
         <div class="show-input">
           <label for="quantity">Quantity</label>
-          <input id="quantity" type="number" value="1" min="1" increment="1">
+          <input id="quantity" type="number" value="<%= params[:quantity] %>" disabled>
         </div>
         <div class="show-input">
           <label for="total">Total</label>
-          <input id="total" value="£<%= @plant.price %>" disabled>
+          <input id="total" value="£<%= @plant.price * params[:quantity].to_i %>" disabled>
         </div>
         <div class="show-btns">
-          <%= link_to plants_path do %>
+          <%= link_to plant_path(@plant) do %>
             <button class="btn btn-success cancel">Cancel</button>
           <% end %>
           <%= link_to plant_transactions_path(@plant), method: :post do %>
-            <button type="submit" class="btn btn-success">Buy</button>
+            <button type="submit" class="btn btn-success"><strong>Buy</strong></button>
           <% end %>
         </div>
       </form>
