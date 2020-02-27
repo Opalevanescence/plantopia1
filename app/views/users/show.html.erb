@@ -30,13 +30,13 @@
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
                   <% if plant.category == "tree" %>
-                    <h3><i class="fas fa-tree"></i> <%= plant.name %></h3>
+                    <h3><i class="fas fa-tree"></i> <%= plant.name %> (<%= @plant.quantity %>)</h3>
                   <% elsif plant.category == "flower" %>
-                    <h3><i class="fas fa-fan"> </i> <%= plant.name %></h3>
+                    <h3><i class="fas fa-fan"> </i> <%= plant.name %> (<%= @plant.quantity %>)</h3>
                   <% elsif plant.category == "bush" %>
-                    <h3><i class="fab fa-pagelines"></i> <%= plant.name %></h3>
+                    <h3><i class="fab fa-pagelines"></i> <%= plant.name %> (<%= @plant.quantity %>)</h3>
                   <% else %>
-                    <h3><i class="fas fa-cannabis"></i> <%= plant.name %></h3>
+                    <h3><i class="fas fa-cannabis"></i> <%= plant.name %> (<%= @plant.quantity %>)</h3>
                   <% end %>
                   <h3>£<%= plant.price %></h3>
                 </div>
@@ -66,13 +66,13 @@
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
                   <% if purchase.category == "tree" %>
-                    <h3><i class="fas fa-tree"></i> <%= purchase.name %></h3>
+                    <h3><i class="fas fa-tree"></i> <%= purchase.name %> (<%= @purchase.quantity %>)</h3>
                   <% elsif purchase.category == "flower" %>
-                    <h3><i class="fas fa-fan"> </i> <%= purchase.name %></h3>
+                    <h3><i class="fas fa-fan"> </i> <%= purchase.name %> (<%= @purchase.quantity %>)</h3>
                   <% elsif purchase.category == "bush" %>
-                    <h3><i class="fab fa-pagelines"></i> <%= purchase.name %></h3>
+                    <h3><i class="fab fa-pagelines"></i> <%= purchase.name %> (<%= @purchase.quantity %>)</h3>
                   <% else %>
-                    <h3><i class="fas fa-cannabis"></i> <%= purchase.name %></h3>
+                    <h3><i class="fas fa-cannabis"></i> <%= purchase.name %> (<%= @purchase.quantity %>)</h3>
                   <% end %>
                   <h3>£<%= purchase.price %></h3>
                 </div>
@@ -94,13 +94,13 @@
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
                   <% if plant_sold.plant.category == "tree" %>
-                    <h3><i class="fas fa-tree"></i> <%= plant_sold.plant.name %></h3>
+                    <h3><i class="fas fa-tree"></i> <%= plant_sold.plant.name %> (<%= @plant.quantity %>)</h3>
                   <% elsif plant_sold.plant.category == "flower" %>
-                    <h3><i class="fas fa-fan"> </i> <%= plant_sold.plant.name %></h3>
+                    <h3><i class="fas fa-fan"> </i> <%= plant_sold.plant.name %> (<%= @plant.quantity %>)</h3>
                   <% elsif plant_sold.plant.category == "bush" %>
-                    <h3><i class="fab fa-pagelines"></i> <%= plant_sold.plant.name %></h3>
+                    <h3><i class="fab fa-pagelines"></i> <%= plant_sold.plant.name %> (<%= @plant.quantity %>)</h3>
                   <% else %>
-                    <h3><i class="fas fa-cannabis"></i> <%= plant_sold.plant.name %></h3>
+                    <h3><i class="fas fa-cannabis"></i> <%= plant_sold.plant.name %> (<%= @plant.quantity %>)</h3>
                   <% end %>
                   <h3>£<%= plant_sold.plant.price %></h3>
                 </div>
