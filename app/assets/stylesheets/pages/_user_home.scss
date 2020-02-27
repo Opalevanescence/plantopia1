@@ -1,3 +1,11 @@
+.user-bar {
+  position: relative;
+}
+
+.user-info {
+  align-items: center;
+}
+
 .user_home_btn {
   color: #F7F7F7;
   height: 50px;
@@ -5,6 +13,12 @@
   &:hover {
     color: white;
   }
+}
+
+.add-new-link {
+  position: absolute;
+  top: 30px;
+  right: 10px;
 }
 
 .user_home_alert {
