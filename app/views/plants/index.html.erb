@@ -11,8 +11,15 @@
 
     <div>
       <% @groups.each do |category, plants| %>
-
-        <h1 class="cards-header"><%= category.capitalize %></h1>
+        <% if category == "tree" %>
+          <h1 class="cards-header"><i class="fas fa-tree"></i> <%= category.capitalize %></h1>
+        <% elsif category == "flower" %>
+          <h1 class="cards-header"><i class="fas fa-fan"></i> <%= category.capitalize %></h1>
+        <% elsif category == "bush" %>
+          <h1 class="cards-header"><i class="fas fa-pagelines"></i> <%= category.capitalize %></h1>
+        <% else %>
+          <h1 class="cards-header"><i class="fas fa-cannabis"></i> <%= category.capitalize %></h1>
+        <% end %>
         <div class="cards">
           <% plants.each do |plant| %>
             <div class="card-plant">
