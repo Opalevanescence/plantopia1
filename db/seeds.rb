@@ -22,12 +22,15 @@ puts '------Creating Plants-------'
 
 puts '-------creating trees-------'
 file = URI.open('https://res.cloudinary.com/dilq1zbdq/image/upload/v1582812736/tree_amur_maple_guagmi.jpg')
-one = Plant.new(name: 'Amur Maple', remote_photo_url:'https://res.cloudinary.com/dilq1zbdq/image/upload/v1582812736/tree_amur_maple_guagmi.jpg',
-              category: 'tree', price: (20..100).to_a.sample,
-              description: 'The Amur maple is a low-growing tree excellent for small yards and other small-scale landscapes. It can be grown as a multistemmed clump or be trained into a small tree with a single trunk up to 6 feet tall.',
-              user_id: jess.id)
-one.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-one.save!
+one = Plant.new(
+  name: 'Amur Maple',
+  # remote_photo_url:'https://res.cloudinary.com/dilq1zbdq/image/upload/v1582812736/tree_amur_maple_guagmi.jpg',
+  category: 'tree',
+  price: (20..100).to_a.sample,
+  description: 'The Amur maple is a low-growing tree excellent for small yards and other small-scale landscapes. It can be grown as a multistemmed clump or be trained into a small tree with a single trunk up to 6 feet tall.',
+  user_id: jess.id)
+  one.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  one.save!
 # two = Plant.create!(name: 'Crab Apple', # picture: 'https://source.unsplash.com/random',
 #               category: 'tree', price: (20..100).to_a.sample,
 #               description: 'Crab apples are best grown in sunny locations with good air circulation. They have no particular soil preferences, although the soil should be well-drained. Prune the roots to transplant crab apples most easily. Tree size, flower color, fruit color, growth, and branching habit vary considerably with the specific cultivar, but many grow about 20 feet tall and are wide-spreading.',

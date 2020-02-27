@@ -18,7 +18,7 @@
             <div class="card-plant">
               <%= link_to plant_path(plant) do %>
                 <% if plant.photo.attached? %>
-                  <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
+                  <%= cl_image_tag plant.photo.key, height: 250, width: 344, crop: :fill %>
                 <% end %>
               <% end %>
               <div class="card-plant-info">

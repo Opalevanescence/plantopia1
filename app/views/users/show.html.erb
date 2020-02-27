@@ -27,7 +27,7 @@
           <% @my_plants.each do |plant| %>
             <div class="card-plant">
               <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
+                <%= cl_image_tag plant.photo.key, height: 250, width: 333, crop: :fill %>
               <% end %>
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
@@ -64,7 +64,9 @@
         <div class="cards">
           <% @my_purchases.each do |purchase| %>
             <div class="card-plant">
-              <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
+              <% if purchase.photo.attached? %>
+                <%= cl_image_tag purchase.photo.key, height: 250, width: 333, crop: :fill %>
+              <% end %>
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
                   <% if purchase.category == "tree" %>
@@ -92,7 +94,9 @@
         <div class="cards">
           <% @plants_sold.each do |plant_sold| %>
             <div class="card-plant">
-              <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
+              <% if plant_sold.plant.photo.attached? %>
+                <%= cl_image_tag plant_sold.plant.photo.key, height: 250, width: 333, crop: :fill %>
+              <% end %>
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
                   <% if plant_sold.plant.category == "tree" %>
