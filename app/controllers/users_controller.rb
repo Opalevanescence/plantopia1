@@ -1,29 +1,28 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
+    @user = User.new(user_params)
   end
 
   def create
-     @user = user.new(user_params)
-    if @user.save
-      redirect_to users_path
+    @user = User.new(user_params)
+    if @user.save!
+      redirect_to user_path(current_user)
     else
       render :new
-    end
-  end
-
-  def update
-    if @user.update(user_params)
-      redirect_to @user
-    else
-      render :edit
     end
   end
 
   def edit
   end
 
+  def update
+    if @user.update(user_params)
+      redirect_to user_path(current_user)
+    else
+      render :edit
+    end
+  end
 
   def show
     @user = current_user
