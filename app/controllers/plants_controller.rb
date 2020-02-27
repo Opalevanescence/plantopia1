@@ -2,7 +2,6 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   def index
-    # raise
     if params[:query].present?
       @search_term = params[:query]
       @plants = Plant.search_by_name_and_description(@search_term)
@@ -52,7 +51,6 @@ class PlantsController < ApplicationController
     def set_plant
       @plant = Plant.find(params[:id])
     end
-
 
     def plant_params
       params.require(:plant).permit(:name, :price, :description, :category, :user_id, :photo, :quantity)

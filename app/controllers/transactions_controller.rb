@@ -7,13 +7,13 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new
-    @transaction.plant_id = @plant.id # or smart enough to be just @plant?
+    @transaction.plant = @plant
     @transaction.user_id = current_user.id
 
     if @transaction.save
       redirect_to user_path(current_user)
     else
-      redirect_to @plant_path
+      redirect_to plant_path(@plant)
     end
   end
 
