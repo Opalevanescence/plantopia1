@@ -2,8 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
+# Upload images
+gem 'cloudinary', '~> 1.12.0'
+# Keeps keys secret
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise'
+
 gem 'faker'
 
 gem 'pg_search', '~> 2.3.0'
