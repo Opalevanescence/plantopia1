@@ -7,7 +7,7 @@
     </div>
   <% end %>
 
-  <div class="show-plant">
+  <div id="plant-id" class="show-plant" data-id= <%= @plant.id %>>
     <div>
       <img class="show-plant-image" src="https://images.unsplash.com/photo-1502394202744-021cfbb17454?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" alt="">
     </div>
@@ -27,7 +27,8 @@
         <div><h3>£<%= @plant.price %></h3></div>
       </div>
       <div class="show-description"><%= @plant.description %></div>
-        <form class="show-form">
+
+        <form class="show-form" id="show-form">
           <div class="show-input">
             <label for="quantity">Quantity</label>
             <input id="quantity" name="quantity" type="number" value="1" min="1" increment="1">
@@ -41,13 +42,9 @@
               <button class="btn btn-success cancel">Cancel</button>
             <% end %>
             <% if current_user == @plant.user %>
-              <%= link_to '#' do %>
                 <button class="btn show-btn-color">Buy</button>
-              <% end %>
             <% else %>
-              <%= link_to new_plant_transaction_path(@plant) do %>
-                <button type="submit" class="btn btn-success">Buy</button>
-              <% end %>
+                <button id="buy-btn" class="btn btn-success" type="submit" >Buy</button>
             <% end %>
           </div>
         </form>
@@ -61,4 +58,12 @@
   quantity.addEventListener("click", (e) => {
     total.value = `£${ quantity.value * <%= @plant.price %> }`
   })
+
+  const buy = document.getElementById("show-form");
+
+  buy.addEventListener("submit", (e) => {
+    e.preventDefault();
+    window.location.href = window.location.href + `/transactions/new?quantity=` + quantity.value;
+  })
+
 </script>

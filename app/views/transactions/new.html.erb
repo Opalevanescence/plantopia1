@@ -14,11 +14,11 @@
       <form class="show-form">
         <div class="show-input">
           <label for="quantity">Quantity</label>
-          <input id="quantity" type="number" value="1" min="1" increment="1">
+          <input id="quantity" type="number" value="<%= params[:quantity] %>" min="1" increment="1">
         </div>
         <div class="show-input">
           <label for="total">Total</label>
-          <input id="total" value="£<%= @plant.price %>" disabled>
+          <input id="total" value="£<%= @plant.price * params[:quantity].to_i %>" disabled>
         </div>
         <div class="show-btns">
           <%= link_to plants_path do %>

@@ -11,8 +11,6 @@ class TransactionsController < ApplicationController
     @transaction.user_id = current_user.id
 
     if @transaction.save
-      # NEED TO SEND TO USER HOMEPAGE
-      # redirect_to @root_path
       redirect_to user_path(current_user)
     else
       redirect_to @plant_path
