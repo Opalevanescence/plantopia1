@@ -9,6 +9,8 @@ class PlantsController < ApplicationController
     else
       @plants = Plant.all
     end
+
+    @groups = @plants.group_by { |p| p.category }
   end
 
   def show
