@@ -7,10 +7,9 @@ class User < ApplicationRecord
   has_many :plants, dependent: :destroy
   has_many :bought_plants, through: :transactions, source: :plant
 
-
-  validates :username, presence: true, uniqueness: true, length: { in: 5..30 }
-  # Eventually, username should validate that it's an email address
-  validates :password, presence: true, length: { in: 5..20 }
+  # SET UP DEVISE FIRST TO CREATE USER - validations below are causing conflict and problem signing up
+  # validates :username, presence: true, uniqueness: true, length: { in: 5..30 }
+  # validates :password, presence: true, length: { in: 5..20 }
 
   def sold_plants
     plants.map{|p| p.transactions }.flatten.reject{|t| t.user == self}
