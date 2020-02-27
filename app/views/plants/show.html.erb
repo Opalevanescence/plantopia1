@@ -39,12 +39,12 @@
           </div>
           <div class="show-btns">
             <%= link_to plants_path do %>
-              <button class="btn btn-success cancel">Cancel</button>
+              <button class="btn btn-success cancel">Back</button>
             <% end %>
             <% if current_user == @plant.user %>
-                <button class="btn show-btn-color">Buy</button>
+                <button class="btn show-btn-color">Next</button>
             <% else %>
-                <button id="buy-btn" class="btn btn-success" type="submit" >Buy</button>
+                <button id="buy-btn" class="btn btn-success" type="submit">Next</button>
             <% end %>
           </div>
         </form>

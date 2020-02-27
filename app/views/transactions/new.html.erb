@@ -21,7 +21,7 @@
           <input id="total" value="£<%= @plant.price * params[:quantity].to_i %>" disabled>
         </div>
         <div class="show-btns">
-          <%= link_to plants_path do %>
+          <%= link_to plant_path(@plant) do %>
             <button class="btn btn-success cancel">Cancel</button>
           <% end %>
           <%= link_to plant_transactions_path(@plant), method: :post do %>
