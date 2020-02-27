@@ -27,11 +27,15 @@
         <div><h3>£<%= @plant.price %></h3></div>
       </div>
       <div class="show-description"><%= @plant.description %></div>
-
+        <p class="confirmation-message">How many would you like to buy?"</p>
         <form class="show-form" id="show-form">
           <div class="show-input">
             <label for="quantity">Quantity</label>
-            <input id="quantity" name="quantity" type="number" value="1" min="1" increment="1">
+            <% if current_user != @plant.user %>
+              <input id="quantity" name="quantity" type="number" value="1" min="1" increment="1">
+            <% else %>
+              <input id="quantity" name="quantity" type="number" value="1" disabled>
+            <% end %>
           </div>
           <div class="show-input">
             <label for="total">Total</label>
@@ -39,10 +43,9 @@
           </div>
           <div class="show-btns">
             <%= link_to plants_path do %>
-              <button class="btn btn-success cancel">Back</button>
+              <button class="btn btn-success cancel">Home</button>
             <% end %>
             <% if current_user != @plant.user %>
-
                 <button id="buy-btn" class="btn btn-success" type="submit">Next</button>
             <% end %>
           </div>
