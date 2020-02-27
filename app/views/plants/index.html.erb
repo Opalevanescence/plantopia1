@@ -1,5 +1,5 @@
 <div class="container">
-    <%= form_tag plants_path, method: :get, class: "form-inline" do %>
+    <%= form_tag plants_path, method: :get, class: "form-inline form-search" do %>
       <%= text_field_tag :query,
         params[:query],
         class: 'form-control',
