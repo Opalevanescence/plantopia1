@@ -26,7 +26,9 @@
         <div class="cards">
           <% @my_plants.each do |plant| %>
             <div class="card-plant">
-              <img class="card-plant-image" src="https://images.unsplash.com/photo-1456415333674-42b11b9f5b7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="">
+              <% if plant.photo.attached? %>
+              <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
+              <% end %>
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
                   <% if plant.category == "tree" %>

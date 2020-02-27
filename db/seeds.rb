@@ -114,23 +114,23 @@ one.save!
 
 puts '----Creating Transactions---'
 
-Transaction.create!(
-  user_id: jess.id,
-  plant_id: nine.id)
-Transaction.create!(
-  user_id: jess.id,
-  plant_id: twenty_one.id,)
-Transaction.create!(
-  user_id: jess.id,
-  plant_id: eighteen.id,)
-Transaction.create!(
-  user_id: ja.id,
-  plant_id: twelve.id)
+# Transaction.create!(
+#   user_id: jess.id,
+#   plant_id: nine.id)
+# Transaction.create!(
+#   user_id: jess.id,
+#   plant_id: twenty_one.id,)
+# Transaction.create!(
+#   user_id: jess.id,
+#   plant_id: eighteen.id,)
+# Transaction.create!(
+#   user_id: ja.id,
+#   plant_id: twelve.id)
+# Transaction.create!(
+#   user_id: agis.id,
+#   plant_id: six.id)
 Transaction.create!(
   user_id: agis.id,
-  plant_id: six.id)
-Transaction.create!(
-  user_id: agis.id,
-  plant_id: eight.id)
+  plant_id: one.id)
 
 puts '--------Done Creating--------'
