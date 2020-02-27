@@ -2,10 +2,12 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @plants = Plant.all
+    # raise
     if params[:query].present?
       @search_term = params[:query]
-      @plants_from_search = Plant.where("name like ?", "%#{@search_term}%")
+      @plants = Plant.search_by_name_and_description(@search_term)
+    else
+      @plants = Plant.all
     end
   end
 
