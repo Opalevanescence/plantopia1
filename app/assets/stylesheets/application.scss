@@ -14,6 +14,10 @@
 @import "pages/user_home";
 @import "pages/register";
 
+body {
+  padding-top: 86px;
+}
+
 a {
   color: #6A8D73;
   text-decoration: none;

@@ -1,180 +1,41 @@
-<div class=“container”>
-  <%= form_tag plants_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: 'form-control',
-      placeholder: 'Find a plant'
-      %>
-    <%= submit_tag 'Search', class: 'btn btn-primary' %>
-  <% end %>
-</div>
+<div class="container">
+    <%= form_tag plants_path, method: :get, class: "form-inline" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: 'form-control',
+        placeholder: 'Find a plant'
+        %>
+      <%= submit_tag 'Search', class: 'btn btn-success ml-2'%>
+    <% end %>
 
-<% if  @plants_from_search %>
-  <div class="container">
-    <h1 class="cards-header">
-      <%= link_to @search_term, plants_path %>
-    </h1>
-    <div class="cards">
-      <% @plants_from_search.select do |plant| %>
-        <div class="card-plant">
-          <%= link_to plant_path(plant) do %>
-              <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
+
+    <div>
+      <% @groups.each do |category, plants| %>
+
+        <h1 class="cards-header"><%= category.capitalize %></h1>
+        <div class="cards">
+          <% plants.each do |plant| %>
+            <div class="card-plant">
+              <%= link_to plant_path(plant) do %>
+                <% if plant.photo.attached? %>
+                  <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
+                <% end %>
               <% end %>
-            <% end %>
-          <div class="card-plant-info">
-            <div class="card-plant-info-details">
-              <h3><%= link_to plant.name, plant_path(plant) %></h3>
-              <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
+              <div class="card-plant-info">
+                <div class="card-plant-info-details">
+                  <h3><%= link_to plant.name, plant_path(plant) %></h3>
+                  <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
+                </div>
+                <span class="card-plant-show-link">
+                  <%= truncate(plant.description, length: 120) %>
+                  <%= link_to(plant_path(plant)) do %>
+                    ...see more <%= icon("fas", "seedling") %>
+                  <% end %>
+                </span>
+              </div>
             </div>
-            <span class="card-plant-show-link">
-              <%= truncate(plant.description, length: 120) %>
-              <%= link_to(plant_path(plant)) do %>
-                ...see more <%= icon("fas", "seedling") %>
-              <% end %>
-            </span>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-  </div>
-<% else %>
-  <div class="container">
-    <h1 class="cards-header">
-      <%= link_to "Trees", plants_path %>
-    </h1>
-    <div class="cards">
-      <% counter = 0 %>
-      <% @plants.select do |plant| %>
-        <% if plant.category == "tree" && counter < 6 %>
-          <div class="card-plant">
-            <%= link_to plant_path(plant) do %>
-              <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
-              <% end %>
-            <% end %>
-            <div class="card-plant-info">
-              <div class="card-plant-info-details">
-                <h3><%= link_to plant.name, plant_path(plant) %></h3>
-                <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
-              </div>
-              <span class="card-plant-show-link">
-                <%= truncate(plant.description, length: 120) %>
-                <%= link_to(plant_path(plant)) do %>
-                  ...see more <%= icon("fas", "seedling") %>
-                <% end %>
-              </span>
-              <% counter += 1 %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="show-all-link">
-      <%= link_to "(show all)", plants_path %>
-    </div>
-
-    <h1 class="cards-header">
-      <%= link_to "Flowers", plants_path %>
-    </h1>
-    <div class="cards">
-      <% counter = 0 %>
-      <% @plants.select do |plant| %>
-        <% if plant.category == "flower" && counter < 6 %>
-          <div class="card-plant">
-            <%= link_to plant_path(plant) do %>
-              <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
-              <% end %>
-            <% end %>
-            <div class="card-plant-info">
-              <div class="card-plant-info-details">
-                <h3><%= link_to plant.name, plant_path(plant) %></h3>
-                <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
-              </div>
-              <span class="card-plant-show-link">
-                <%= truncate(plant.description, length: 120) %>
-                <%= link_to(plant_path(plant)) do %>
-                  ...see more <%= icon("fas", "seedling") %>
-                <% end %>
-              </span>
-              <% counter += 1 %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="show-all-link">
-      <%= link_to "(show all)", plants_path %>
-    </div>
-
-    <h1 class="cards-header">
-      <%= link_to "Bushes", plants_path %>
-    </h1>
-    <div class="cards">
-      <% counter = 0 %>
-      <% @plants.select do |plant| %>
-        <% if plant.category == "bush" && counter < 6 %>
-          <div class="card-plant">
-            <%= link_to plant_path(plant) do %>
-              <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
-              <% end %>
-            <% end %>
-            <div class="card-plant-info">
-              <div class="card-plant-info-details">
-                <h3><%= link_to plant.name, plant_path(plant) %></h3>
-                <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
-              </div>
-              <span class="card-plant-show-link">
-                <%= truncate(plant.description, length: 120) %>
-                <%= link_to(plant_path(plant)) do %>
-                  ...see more <%= icon("fas", "seedling") %>
-                <% end %>
-              </span>
-              <% counter += 1 %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="show-all-link">
-      <%= link_to "(show all)", plants_path %>
-    </div>
-
-    <h1 class="cards-header">
-      <%= link_to "Cacti", plants_path %>
-    </h1>
-    <div class="cards">
-      <% counter = 0 %>
-      <% @plants.select do |plant| %>
-        <% if plant.category == "cactus" && counter < 6 %>
-          <div class="card-plant">
-            <%= link_to plant_path(plant) do %>
-              <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
-              <% end %>
-            <% end %>
-            <div class="card-plant-info">
-              <div class="card-plant-info-details">
-                <h3><%= link_to plant.name, plant_path(plant) %></h3>
-                <h3>£<%= link_to plant.price, plant_path(plant) %></h3>
-              </div>
-              <span class="card-plant-show-link">
-                <%= truncate(plant.description, length: 120) %>
-                <%= link_to(plant_path(plant)) do %>
-                  ...see more <%= icon("fas", "seedling") %>
-                <% end %>
-              </span>
-              <% counter += 1 %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="show-all-link">
-      <%= link_to "(show all)", plants_path %>
-    </div>
-
-  </div>
-<% end %>
+</div>
