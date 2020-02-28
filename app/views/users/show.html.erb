@@ -25,31 +25,42 @@
       <% else %>
         <div class="cards">
           <% @my_plants.each do |plant| %>
-            <div class="card-plant">
+            <% if plant.category == "tree"%>
+              <div class="card-plant-tree">
+            <% elsif plant.category == "flower" %>
+              <div class="card-plant-flower">
+            <% elsif plant.category == "bush" %>
+              <div class="card-plant-bush">
+            <% elsif plant.category == "cactus" %>
+              <div class="card-plant-cactus">
+            <% end %>
               <% if plant.photo.attached? %>
                 <%= cl_image_tag plant.photo.key, height: 250, width: 333, crop: :fill %>
               <% end %>
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
-                  <% if plant.category == "tree" %>
-                    <h3><i class="fas fa-tree"></i> <%= plant.name %></h3>
-                  <% elsif plant.category == "flower" %>
-                    <h3><i class="fas fa-fan"> </i> <%= plant.name %></h3>
-                  <% elsif plant.category == "bush" %>
-                    <h3><i class="fab fa-pagelines"></i> <%= plant.name %></h3>
-                  <% else %>
-                    <h3><i class="fas fa-cannabis"></i> <%= plant.name %></h3>
-                  <% end %>
+                  <h3><%= plant.name %></h3>
                   <h3>£<%= plant.price %></h3>
                 </div>
-                <span class="card-plant-show-link user_home_btns">
-                  <%= link_to edit_plant_path(plant) do%>
-                    <i class="far fa-edit"></i>
+                <div class="d-flex justify-content-between">
+                  <% if plant.category == "tree" %>
+                    <p class="m-0"><i class="fa fa-tree icon-tree"></i></p>
+                  <% elsif plant.category == "flower" %>
+                    <p class="m-0"><i class="fa fa-fan icon-flower"> </i></p>
+                  <% elsif plant.category == "bush" %>
+                    <p class="m-0"><i class="fa fa-cannabis icon-bush"></i></p>
+                  <% else %>
+                    <p class="m-0"><i class="fas fa-sun icon-cactus"></i></p>
                   <% end %>
-                  <%= link_to plant_path(plant), method: :delete do%>
-                    <i class="far fa-trash-alt"></i>
-                  <% end %>
-                </span>
+                  <span class="card-plant-show-link user_home_btns">
+                    <%= link_to edit_plant_path(plant) do%>
+                      <i class="far fa-edit"></i>
+                    <% end %>
+                    <%= link_to plant_path(plant), method: :delete do%>
+                      <i class="far fa-trash-alt"></i>
+                    <% end %>
+                  </span>
+                </div>
               </div>
             </div>
           <% end %>
@@ -63,22 +74,34 @@
       <% else %>
         <div class="cards">
           <% @my_purchases.each do |purchase| %>
+            <% if purchase.category == "tree"%>
+              <div class="card-plant-tree">
+            <% elsif purchase.category == "flower" %>
+              <div class="card-plant-flower">
+            <% elsif purchase.category == "bush" %>
+              <div class="card-plant-bush">
+            <% elsif purchase.category == "cactus" %>
+              <div class="card-plant-cactus">
+            <% end %>
             <div class="card-plant">
               <% if purchase.photo.attached? %>
                 <%= cl_image_tag purchase.photo.key, height: 250, width: 333, crop: :fill %>
               <% end %>
               <div class="card-plant-info">
                 <div class="card-plant-info-details">
-                  <% if purchase.category == "tree" %>
-                    <h3><i class="fas fa-tree"></i> <%= purchase.name %></h3>
-                  <% elsif purchase.category == "flower" %>
-                    <h3><i class="fas fa-fan"> </i> <%= purchase.name %></h3>
-                  <% elsif purchase.category == "bush" %>
-                    <h3><i class="fab fa-pagelines"></i> <%= purchase.name %></h3>
-                  <% else %>
-                    <h3><i class="fas fa-cannabis"></i> <%= purchase.name %></h3>
-                  <% end %>
+                  <h3><%= purchase.name %></h3>
                   <h3>£<%= purchase.price %></h3>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <% if purchase.category == "tree" %>
+                    <p class="m-0"><i class="fa fa-tree icon-tree"></i></p>
+                  <% elsif purchase.category == "flower" %>
+                    <p class="m-0"><i class="fa fa-fan icon-flower"> </i></p>
+                  <% elsif purchase.category == "bush" %>
+                    <p class="m-0"><i class="fa fa-cannabis icon-bush"></i></p>
+                  <% else %>
+                    <p class="m-0"><i class="fas fa-sun icon-cactus"></i></p>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -93,24 +116,34 @@
       <% else %>
         <div class="cards">
           <% @plants_sold.each do |plant_sold| %>
+            <% if plant_sold.plant.category == "tree"%>
+              <div class="card-plant-tree">
+            <% elsif plant_sold.plant.category == "flower" %>
+              <div class="card-plant-flower">
+            <% elsif plant_sold.plant.category == "bush" %>
+              <div class="card-plant-bush">
+            <% elsif plant_sold.plant.category == "cactus" %>
+              <div class="card-plant-cactus">
+            <% end %>
             <div class="card-plant">
               <% if plant_sold.plant.photo.attached? %>
                 <%= cl_image_tag plant_sold.plant.photo.key, height: 250, width: 333, crop: :fill %>
               <% end %>
               <div class="card-plant-info">
-                <div class="card-plant-info-details">
+                  <div class="card-plant-info-details">
+                    <h3><%= plant_sold.plant.name %></h3>
+                    <h3>£<%= plant_sold.plant.price %></h3>
+                  </div>
                   <% if plant_sold.plant.category == "tree" %>
-                    <h3><i class="fas fa-tree"></i> <%= plant_sold.plant.name %></h3>
+                    <p class="m-0"><i class="fa fa-tree icon-tree"></i></p>
                   <% elsif plant_sold.plant.category == "flower" %>
-                    <h3><i class="fas fa-fan"> </i> <%= plant_sold.plant.name %></h3>
+                    <p class="m-0"><i class="fa fa-fan icon-flower"> </i></p>
                   <% elsif plant_sold.plant.category == "bush" %>
-                    <h3><i class="fab fa-pagelines"></i> <%= plant_sold.plant.name %></h3>
+                    <p class="m-0"><i class="fa fa-cannabis icon-bush"></i></p>
                   <% else %>
-                    <h3><i class="fas fa-cannabis"></i> <%= plant_sold.plant.name %></h3>
+                    <p class="m-0"><i class="fas fa-sun icon-cactus"></i></p>
                   <% end %>
-                  <h3>£<%= plant_sold.plant.price %></h3>
                 </div>
-              </div>
             </div>
           <% end %>
         </div>

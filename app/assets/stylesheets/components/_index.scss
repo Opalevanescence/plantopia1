@@ -3,6 +3,7 @@
 @import "avatar";
 @import "navbar";
 @import "footer";
+@import "icons";
 
 h1 {
   color: #6a8d73;
@@ -30,6 +31,26 @@ h1 {
 
 .card-plant {
   box-shadow: 3px 3px 10px #6a8d73;
+  background-color: white;
+}
+
+.card-plant-tree {
+  box-shadow: 3px 3px 10px #6A8D73;
+  background-color: white;
+}
+
+.card-plant-flower {
+  box-shadow: 3px 3px 10px #e5b7da;
+  background-color: white;
+}
+
+.card-plant-bush {
+  box-shadow: 3px 3px 10px #8c776a;
+  background-color: white;
+}
+
+.card-plant-cactus {
+  box-shadow: 3px 3px 10px #CCA543;
   background-color: white;
 }
 
