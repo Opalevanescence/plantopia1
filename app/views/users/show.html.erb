@@ -74,7 +74,7 @@
       <% else %>
         <div class="cards">
           <% @my_purchases.each do |purchase| %>
-            <% if purchase.category == "tree"%>
+          <% if purchase.category == "tree"%>
               <div class="card-plant-tree">
             <% elsif purchase.category == "flower" %>
               <div class="card-plant-flower">
@@ -83,7 +83,6 @@
             <% elsif purchase.category == "cactus" %>
               <div class="card-plant-cactus">
             <% end %>
-            <div class="card-plant">
               <% if purchase.photo.attached? %>
                 <%= cl_image_tag purchase.photo.key, height: 250, width: 333, crop: :fill %>
               <% end %>
@@ -149,6 +148,5 @@
         </div>
       <% end %>
     </div>
-
   </div>
-</div>
+
