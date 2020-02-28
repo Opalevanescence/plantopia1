@@ -1,6 +1,5 @@
 class PlantsController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:show, :index]
-
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -30,9 +29,6 @@ class PlantsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update
