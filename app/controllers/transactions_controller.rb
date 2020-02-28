@@ -8,12 +8,16 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new
     @transaction.plant = @plant
-    @transaction.user_id = current_user.id
 
-    if @transaction.save
-      redirect_to user_path(current_user)
+    if current_user
+      @transaction.user_id = current_user.id
+      if @transaction.save
+        redirect_to user_path(current_user)
+      else
+        redirect_to plant_path(@plant)
+      end
     else
-      redirect_to plant_path(@plant)
+      redirect_to new_user_session_path
     end
   end
 
