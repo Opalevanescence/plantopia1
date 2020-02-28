@@ -8,15 +8,27 @@
 # User.destroy_all
 require "open-uri"
 
-User.destroy_all
 Plant.destroy_all
+User.destroy_all
 
 puts '-------Creating Users-------'
 
-jess = User.create!(username: 'Jessica DeWitt', email: 'jess@gmail.com', password: 'password')
-dee = User.create!(username: 'Dee Lye', email: 'dee@gmail.com', password: 'password')
-agis = User.create!(username: 'Agisilaos Karkalos', email: 'agis@gmail.com', password: 'password')
-ja = User.create!(username: 'Jahaira Castaneda', email: 'jahaira@gmail.com', password: 'password')
+file = URI.open('https://i.imgur.com/F9G16oJ.png')
+jess = User.new(username: 'Jessica DeWitt', email: 'jess@gmail.com', password: 'password')
+  jess.photo.attach(io: file, filename: '', content_type: 'image/png')
+  jess.save
+file = URI.open('https://avatars0.githubusercontent.com/u/56324000?v=4')
+dee = User.new(username: 'Dee Lye', email: 'dee@gmail.com', password: 'password')
+  dee.photo.attach(io: file, filename: '', content_type: 'image/png')
+  dee.save
+file = URI.open('https://avatars1.githubusercontent.com/u/50817798?v=4')
+agis = User.new(username: 'Agisilaos Karkalos', email: 'agis@gmail.com', password: 'password')
+  agis.photo.attach(io: file, filename: '', content_type: 'image/png')
+  agis.save
+file = URI.open('https://avatars3.githubusercontent.com/u/57145417?v=4')
+ja = User.new(username: 'Jahaira Castaneda', email: 'jahaira@gmail.com', password: 'password')
+  ja.photo.attach(io: file, filename: '', content_type: 'image/png')
+  ja.save
 
 puts '------Creating Plants-------'
 
@@ -133,7 +145,7 @@ fifteen = Plant.create!(name: 'Skyrocket Juniper', # picture: 'https://source.un
               fifteen.save!
 
 puts '------creating cacti-------'
-# file = URI.open('https://res.cloudinary.com/dilq1zbdq/image/upload/v1582890787/cacti_angel_wing3_gitntz.jpg')
+
 # sixteen = Plant.create!(name: 'Angel Wings Cactus', # picture: 'https://source.unsplash.com/random',
 #               category: 'cactus', price: (2..20).to_a.sample,
 #               description: 'The Opunta albispina cactus or angel wings cactus is a member of the prickly pear family that grows evenly spaced clusters of hairs rather than sharp spines. The Mexican native grows clusters of pads that get no larger than two feet tall but can grow up to five feet across over time. Pale yellow blooms are followed by red, edible fruits on plants that receive a full day of sun.',

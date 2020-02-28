@@ -7,7 +7,15 @@
     </div>
   <% end %>
 
-  <div id="plant-id" class="show-plant" data-id= <%= @plant.id %>>
+  <% if @plant.category == "tree" %>
+    <div id="plant-id" class="show-plant-tree" data-id= <%= @plant.id %>>
+  <% elsif @plant.category == "flower" %>
+    <div id="plant-id" class="show-plant-flower" data-id= <%= @plant.id %>>
+  <% elsif @plant.category == "bush" %>
+    <div id="plant-id" class="show-plant-bush" data-id= <%= @plant.id %>>
+  <% elsif @plant.category == "cactus" %>
+    <div id="plant-id" class="show-plant-cactus" data-id= <%= @plant.id %>>
+  <% end %>
     <div>
       <% if @plant.photo.attached? %>
         <%= cl_image_tag @plant.photo.key, height: 300, width: 400, crop: :fill, class: "show-plant-image" %>
@@ -18,13 +26,13 @@
       <div class="show-details">
         <div>
           <% if @plant.category == "tree" %>
-            <h3><i class="fas fa-tree"></i> <%= @plant.name %></h3>
+            <h3><i class="fas fa-tree icon-tree"></i> <%= @plant.name %></h3>
           <% elsif @plant.category == "flower" %>
-            <h3><i class="fas fa-fan"> </i> <%= @plant.name %></h3>
+            <h3><i class="fas fa-fan icon-flower"> </i> <%= @plant.name %></h3>
           <% elsif @plant.category == "bush" %>
-            <h3><i class="fab fa-pagelines"></i> <%= @plant.name %></h3>
-          <% else %>
-            <h3><i class="fas fa-cannabis"></i> <%= @plant.name %></h3>
+            <h3><i class="fas fa-cannabis icon-bush"></i> <%= @plant.name %></h3>
+          <% elsif %>
+            <h3><i class="fa fa-sun icon-cactus"></i> <%= @plant.name %></h3>
           <% end %>
         </div>
         <div><h3>£<%= @plant.price %></h3></div>
@@ -53,6 +61,7 @@
             <% end %>
           </div>
         </form>
+      </div>
     </div>
   </div>
 
