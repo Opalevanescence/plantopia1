@@ -1,11 +1,11 @@
 <div class="container">
-    <%= form_tag plants_path, method: :get, class: "form-inline form-search" do %>
+    <%= form_tag plants_path, method: :get, class: "form-inline form-search d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
-        class: 'form-control',
+        class: 'form-control flex-fill',
         placeholder: 'Find a plant'
         %>
-      <%= submit_tag 'Search', class: 'btn btn-success ml-2'%>
+      <%= submit_tag 'Search', class: 'btn btn-success ml-2 px-3'%>
     <% end %>
 
     <div>
@@ -15,11 +15,9 @@
         <% elsif category == "flower" %>
           <h1 class="cards-header"><i class="fas fa-fan"></i> <%= category.capitalize.pluralize %></h1>
         <% elsif category == "bush" %>
-          <h1 class="cards-header"><i class="fab fa-pagelines"></i> <%= category.capitalize.pluralize %></h1>
-        <% elsif category == "cactus" %>
-          <h1 class="cards-header"><i class="fas fa-cannabis"></i> Cacti</h1>
+          <h1 class="cards-header"><i class="fas fa-cannabis"></i> <%= category.capitalize %></h1>
         <% else %>
-          <h1 class="cards-header"><i class="fas fa-cannabis"></i> <%= category.capitalize.pluralize %></h1>
+          <h1 class="cards-header"><i class="fa fa-sun"></i> <%= category.capitalize %></h1>
         <% end %>
         <div class="cards">
           <% plants.each do |plant| %>

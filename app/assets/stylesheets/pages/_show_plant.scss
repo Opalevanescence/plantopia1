@@ -21,6 +21,38 @@
   box-shadow: 3px 3px 10px #6a8d73;
 }
 
+.show-plant-tree {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 88px;
+  background-color: white;
+  box-shadow: 3px 3px 10px #6A8D73;
+}
+
+.show-plant-bush {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 88px;
+  background-color: white;
+  box-shadow: 3px 3px 10px #e5b7da;
+}
+
+.show-plant-flower {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 88px;
+  background-color: white;
+  box-shadow: 3px 3px 10px #8c776a;
+}
+
+.show-plant-cactus {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 88px;
+  background-color: white;
+  box-shadow: 3px 3px 10px #cca543;
+}
+
 .show-plant-image {
   width: 425px;
   height: 350px;
@@ -34,6 +66,7 @@
 .show-info {
   position: relative;
   padding: 20px;
+  width: 100%;
 }
 
 .show-details {
