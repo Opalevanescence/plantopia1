@@ -8,8 +8,8 @@
 # User.destroy_all
 require "open-uri"
 
-User.destroy_all
 Plant.destroy_all
+User.destroy_all
 
 puts '-------Creating Users-------'
 
