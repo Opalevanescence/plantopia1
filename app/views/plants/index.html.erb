@@ -15,9 +15,9 @@
         <% elsif category == "flower" %>
           <h1 class="cards-header"><i class="fas fa-fan"></i> <%= category.capitalize %></h1>
         <% elsif category == "bush" %>
-          <h1 class="cards-header"><i class="fab fa-pagelines"></i> <%= category.capitalize %></h1>
-        <% else %>
           <h1 class="cards-header"><i class="fas fa-cannabis"></i> <%= category.capitalize %></h1>
+        <% else %>
+          <h1 class="cards-header"><i class="fa fa-sun"></i> <%= category.capitalize %></h1>
         <% end %>
         <div class="cards">
           <% plants.each do |plant| %>
