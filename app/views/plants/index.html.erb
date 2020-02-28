@@ -8,7 +8,6 @@
       <%= submit_tag 'Search', class: 'btn btn-success ml-2'%>
     <% end %>
 
-
     <div>
       <% @groups.each do |category, plants| %>
         <% if category == "tree" %>
@@ -16,7 +15,7 @@
         <% elsif category == "flower" %>
           <h1 class="cards-header"><i class="fas fa-fan"></i> <%= category.capitalize %></h1>
         <% elsif category == "bush" %>
-          <h1 class="cards-header"><i class="fas fa-pagelines"></i> <%= category.capitalize %></h1>
+          <h1 class="cards-header"><i class="fab fa-pagelines"></i> <%= category.capitalize %></h1>
         <% else %>
           <h1 class="cards-header"><i class="fas fa-cannabis"></i> <%= category.capitalize %></h1>
         <% end %>
